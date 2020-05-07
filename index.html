@@ -6,12 +6,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <!-- CSS -->
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Proyecto 1</title>
   </head>
   <body>
     <header>
-        <div><img src="images/joystick.png" width=100></div>
+        <div id="headerId" ><img id="joystick" class="joystick" width=100 no-repeat center></div>
     </header>
     <h1>Título del juego</h1> <!--Prueba tu velocidad en cálculos matemáticos-->
     <button onclick=toggleDarkMode()>Modo nocturno</button>
@@ -20,18 +21,28 @@
     <h2>Cómo jugar</h2>
     <p>Instrucciones</p>
     <button>Jugar!</button>
-    <section class="wrapper">
-        <section class="puntuacion">
+    <div class="wrapper">
+        <div class="puntuacion">
             <p>Puntuación:</p>
-        </section>
-        <section class="juego">
+        </div>
+        <div class="juego">
             <p>Resolver:</p>
-        </section>
-    </section>
+        </div>
+    </div>
 
     <footer><p><b>En caso de encontrar algún bug puede reportarlo por mail a juegosbyme@direcciongenerica.com, puede acceder a su aplicación de correo en el siguiente link</b></p></footer>
     <a href="mailto:juegosbyme@direcciongenerica.com" title "Enviar reporte de bugs por correo">Reportar bug</a>
     <!-- JavaScript -->
     <script src="js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+<!--Código útil para referencias a futuro
+Setea una imagen, en este caso con propiedad de ancho=100 (no se puede cambiar la ruta con css, es útil para imágenes estáticas que no cambian)
+<img id="joystick" src="images/joystick.png" width=100>
+
+-->

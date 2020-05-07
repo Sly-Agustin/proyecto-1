@@ -3,29 +3,51 @@ button {
     font-weight: bold;
     color: #000000;
     background: url(imagesCSS/button.png) no-repeat center;
-    /*background-color: grey; */
     width: 150px;
     height: 55px;
     padding: 2px 8px;
 }
 
- /*Para poder usar esto es necesario tener <span id="nocturno"></span>. Ver como cambiar despues. Se puede usar "*" para todo lo que contenga al body, averiguar como abarcar todo*/
-/*body #nocturno{
-    background-color: #000000;
-    color: #ffffff;
-}*/
-/* Esto puede usarse para todo lo que sea de clase nocturno declarado con "class="nocturno""*/
-.nocturno{
-    background-color: #000000;
-    color: #ffffff;
-}
-
-.joystickNocturno{
-    /*background-color: #E71616;*/
-    background: url(imagesCSS/joystickDarkMode.png);
-}
-
 body {
-  font-size: 15px;
-  font-family: Roboto, Arial, sans-serif;
+    font-size: 15px;
+    font-family: Roboto, Arial, sans-serif;
 }
+
+.wrapper{
+    background-color: #D78419;
+    border: 2px solid #000;
+    width: 200px;
+}
+
+
+.nocturno{
+    background-color: #494949;
+    color: #ffffff;
+}
+
+.headerDiv{
+    background-color: #FF0000;
+}
+
+.joystick{
+    content:url(imagesCSS/joystick.png);
+}
+.joystickN{
+    content:url(imagesCSS/joystickInverted.png);
+}
+
+
+/* Código útil para referencias a futuro
+
+-- Nos permite asignar una imagen de background en una getElementsByClassName
+background: url(imagesCSS/joystickInverted.png) no-repeat center;
+
+-- Para poder usar esto es necesario tener <span id="nocturno"></span>. Nos permite cambiar las propiedades de cosas con id y dentro de un span, de manera que no abarque a toda una sección completa.
+body #nocturno{
+   background-color: #000000;
+   color: #ffffff;
+}
+
+-- Parámetro margin: Se agrega a una clase y nos permite establecer un margen x - y pixeles
+margin: 50px 50px;
+*/
