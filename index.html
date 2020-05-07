@@ -1,4 +1,15 @@
 <!doctype html>
+<!--Pendiente:
+    - Reemplazar el header por una navbar con bootstrap e incluir el título, la imagen y el modo nocturno
+    - Agregar un pie de página con bootstrap donde inluir el reporte de errores
+    - Agregar el oyente al botón de respuesta
+    - Darle formato a la página para que no quede todo desordenado
+    - Testear bien el modo nocturno una vez terminado todo lo anterior (debería funcionar bien igual pero por las dudas...)
+    - Ver de agregar varios modos de respuesta (seleccionar respuesta correcta en un radio button, escribir campo, etc)
+    - Importar las librarias de bootstrap locales (para descartar las online)
+
+-->
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -11,22 +22,35 @@
     <title>Proyecto 1</title>
   </head>
   <body>
+
+
     <header>
         <div id="headerId" ><img id="joystick" class="joystick" width=100 no-repeat center></div>
     </header>
     <h1>Título del juego</h1> <!--Prueba tu velocidad en cálculos matemáticos-->
     <button onclick=toggleDarkMode()>Modo nocturno</button>
     <hr/>   <!--Esto se hace por CSS después, está a modo de ejemplo para no olvidarse nomas-->
-    <p>Párrafo de prueba donde se explica el objetivo del juego <br/>Enter forzado por br para probar algo</p>
+    <p>Párrafo de prueba donde se explica el objetivo del juego </p></br>
     <h2>Cómo jugar</h2>
-    <p>Instrucciones</p>
+    <p>Instrucciones:</p>
+    <ul>
+        <li>Instrucciones sobre como empezar a jugar y donde poner los resultados</li>
+        <li>Instrucciones sobre el tiempo</li>
+        <li>Instrucciones sobre el tipo de cálculos que pueden aparecer</li>
+        <li>Instrucción sobre como subir la dificultad (a analizar)</li>
+    </ul>
     <button>Jugar!</button>
     <div class="wrapper">
-        <div class="puntuacion">
+        <!--Esto debe ser modificado por CSS y no aparecer directamente al principio, pero se deja así por el momento para probar que funcione-->
+        <div class="score">
             <p>Puntuación:</p>
         </div>
         <div class="juego">
-            <p>Resolver:</p>
+            <form>
+                <label>Resolver:</label>
+                <input type="text" placeholder="Resultado" />
+                <input type="button" value="Enviar respuesta" />
+            </form>
         </div>
     </div>
 
