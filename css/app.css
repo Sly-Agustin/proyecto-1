@@ -1,4 +1,4 @@
-button {
+/*button{
     border: none;
     font-weight: bold;
     color: #000000;
@@ -6,11 +6,59 @@ button {
     width: 150px;
     height: 55px;
     padding: 2px 8px;
+}*/
+
+/*button:hover {
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}*/
+
+.darkModeButton{
+    border: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 15px 30px;
+    background: #031321;
+    color: #2196f3;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+}
+.darkModeButton:hover {
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}
+
+.lightModeButton{
+    border: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 15px 30px;
+    /*background: #BABABA;
+    color: #3562B6;*/
+    background: #2196f3;
+    color:#255784;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+}
+.lightModeButton:hover {
+    color: #2196f3;
+    background: #031321;
+    box-shadow: 0 0 10px #255784, 0 0 40px #255784, 0 0 80px #255784;
 }
 
 body {
     font-size: 15px;
     font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .wrapper{
@@ -19,10 +67,22 @@ body {
     width: 400px;
 }
 
-
 .nocturno{
     background-color: #494949;
     color: #ffffff;
+}
+
+.row div{
+    background: lightblue;
+    padding: 5px 5px;
+    border: 1px solid;
+    color: #000000;    /*Para evitar que el modo nocturno lo deje feo*/
+}
+
+.bordesColumnas{
+    background: lightblue;
+    padding: 5px 5px;
+    border: 1px solid;
 }
 
 .headerDiv{
@@ -32,6 +92,7 @@ body {
 .joystick{
     content:url(imagesCSS/joystick.png);
 }
+
 .joystickN{
     content:url(imagesCSS/joystickInverted.png);
 }

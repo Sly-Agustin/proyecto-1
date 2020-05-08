@@ -12,23 +12,22 @@
 
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/app.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-    <title>Proyecto 1</title>
+      <title>Proyecto 1</title>
   </head>
   <body>
-
-
+    <div class="container">
     <header>
-        <div id="headerId" ><img id="joystick" class="joystick" width=100 no-repeat center></div>
+        <div id="headerId"><img id="joystick" class="joystick" width=100 no-repeat center></div>
     </header>
     <h1>Título del juego</h1> <!--Prueba tu velocidad en cálculos matemáticos-->
-    <button onclick=toggleDarkMode()>Modo nocturno</button>
+    <button id="buttonDM" class="lightModeButton" onclick=toggleDarkMode()>Modo nocturno ON/OFF</button>
     <hr/>   <!--Esto se hace por CSS después, está a modo de ejemplo para no olvidarse nomas-->
     <p>Párrafo de prueba donde se explica el objetivo del juego </p></br>
     <h2>Cómo jugar</h2>
@@ -39,6 +38,25 @@
         <li>Instrucciones sobre el tipo de cálculos que pueden aparecer</li>
         <li>Instrucción sobre como subir la dificultad (a analizar)</li>
     </ul>
+
+    </br>
+    <h3>Puntajes:</h3>
+    <div class="row justify-content-sm-center">
+        <div class="col-sm-3">Sumas: </div>
+        <div class="col-sm-2">1</div>
+    </div>
+    <div class="row justify-content-sm-center">
+        <div class="col-sm-3">Restas: </div>
+        <div class="col-sm-2">1</div>
+    </div>
+    <div class="row justify-content-sm-center">
+        <div class="col-sm-3">Multiplicaciones: </div>
+        <div class="col-sm-2">2</div>
+    </div>
+    <div class="row justify-content-sm-center">
+        <div class="col-sm-3">Divisiones: </div>
+        <div class="col-sm-2">3</div>
+    </div>
     <button>Jugar!</button>
     <div class="wrapper">
         <!--Esto debe ser modificado por CSS y no aparecer directamente al principio, pero se deja así por el momento para probar que funcione-->
@@ -56,6 +74,7 @@
 
     <footer><p><b>En caso de encontrar algún bug puede reportarlo por mail a juegosbyme@direcciongenerica.com, puede acceder a su aplicación de correo en el siguiente link</b></p></footer>
     <a href="mailto:juegosbyme@direcciongenerica.com" title "Enviar reporte de bugs por correo">Reportar bug</a>
+    </div>
     <!-- JavaScript -->
     <script src="js/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
