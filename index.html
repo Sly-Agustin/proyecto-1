@@ -22,12 +22,35 @@
       <title>Proyecto 1</title>
   </head>
   <body>
-    <div class="container">
-    <header>
+    <!--<header>
         <div id="headerId"><img id="joystick" class="joystick" width=100 no-repeat center></div>
-    </header>
-    <h1>Título del juego</h1> <!--Prueba tu velocidad en cálculos matemáticos-->
-    <button id="buttonDM" class="lightModeButton" onclick=toggleDarkMode()>Modo nocturno ON/OFF</button>
+    </header>-->
+    <!-- Image and text -->
+    <nav class="navbar navbar-expand bgHeader">
+        <a class="navbar-brand whiteColor" href="#"><img width="60" height="60" id="joystick" class="joystick d-inline-block" alt="">Vultur Games</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav bd-navbar-nav flex-row">
+                <li class="nav-link">
+                    <a class="nav-link whiteColor" href="#">Home</a>
+                </li>
+                <li class="nav-link">
+                    <a class="nav-link whiteColor" href="http://www.ninjaipsum.com/" target="_blank">Link de prueba Ninja Ipsum</a>
+                </li>
+
+            </ul>
+        </div>
+        <ul class="navbar-nav ml-md-auto">
+            <li class="nav-link p-2">
+                <a class="navbar-link whiteColor" href="https://github.com/Sly-Agustin/proyecto-1" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="60" id="github" class="github"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
+            </li>
+            <li>
+                <button id="buttonDM" class="lightModeButton" onclick=toggleDarkMode()>Modo nocturno ON/OFF</button>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+    <h1>Prueba tu velocidad en cálculos matemáticos</h1>
     <hr/>   <!--Esto se hace por CSS después, está a modo de ejemplo para no olvidarse nomas-->
     <p>Párrafo de prueba donde se explica el objetivo del juego </p></br>
     <h2>Cómo jugar</h2>
@@ -38,28 +61,80 @@
         <li>Instrucciones sobre el tipo de cálculos que pueden aparecer</li>
         <li>Instrucción sobre como subir la dificultad (a analizar)</li>
     </ul>
-
+    </div>
+    <div class="container">
     </br>
-    <h3>Puntajes:</h3>
-    <div class="row justify-content-sm-center">
-        <div class="col-sm-3">Sumas: </div>
-        <div class="col-sm-2">1</div>
+
+    <!--Operaciones y puntajes-->
+    <h3>Operaciones y puntajes:</h3>
+    </br>
+    <div class="row">
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-transparent">
+                <img id="addImg" class="addImg card-img-top img-fluid">
+                <div class="card-body">
+                    <h3 class="card-title">Suma</h3>
+                    <p>Las sumas son operaciones sencillas, otorgan 1 punto</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-transparent">
+                <img id="subImg" class="subImg card-img-top img-fluid">
+                <div class="card-body">
+                    <h3 class="card-title">Resta</h3>
+                    <p>Las restas son operaciones sencillas, otorgan 1 punto</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-transparent">
+                <img id="mulImg" class="mulImg card-img-top img-fluid">
+                <div class="card-body">
+                    <h3 class="card-title">Multiplicación</h3>
+                    <p>Las multiplicaciones son operaciones sencillas, otorgan 2 puntos</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-transparent">
+                <img id="divImg" class="divImg card-img-top img-fluid">
+                <div class="card-body">
+                    <h3 class="card-title">División</h3>
+                    <p>Las divisiones son las operaciones más complejas del juego, otorgan 3 puntos</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="row justify-content-sm-center">
-        <div class="col-sm-3">Restas: </div>
-        <div class="col-sm-2">1</div>
     </div>
-    <div class="row justify-content-sm-center">
-        <div class="col-sm-3">Multiplicaciones: </div>
-        <div class="col-sm-2">2</div>
+    </br>
+    <!--Container con un Nav donde se describen los distintos modos de juego-->
+    <div class="container">
+        <h3>Modos de juego:</h3>
+        <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
+            <a class="nav-link active" href="#traditional" data-toggle="tab">Modo tradicional</a>
+            <a class="nav-link" href="#multipleChoice" data-toggle="tab">Multiple-choice</a>
+            <a class="nav-link" href="#limitless" data-toggle="tab">Sin límites</a>
+        </nav>
+
+        <div class="tab-content py-5">
+            <div class="tab-pane active" id="traditional">
+                <p>Consiste en hacer la mayor cantidad de cálculos posibles en el periodo de 30 segundos</p>
+            </div>
+            <div class="tab-pane" id="multipleChoice">
+                <p>Es igual al modo tradicional pero en lugar de escribir el resultado debe seleccionarse la respuesta correcta de un grupo</p>
+            </div>
+            <div class="tab-pane" id="limitless">
+                <p>No hay límite de tiempo. Bueno para practicar y mejorar tu velocidad de cálculo sin la presión de tener un reloj</p>
+            </div>
+        </div>
     </div>
-    <div class="row justify-content-sm-center">
-        <div class="col-sm-3">Divisiones: </div>
-        <div class="col-sm-2">3</div>
-    </div>
+
+    <!--Container del modo jugar-->
+    <div class="container">
     <button>Jugar!</button>
     <div class="wrapper">
-        <!--Esto debe ser modificado por CSS y no aparecer directamente al principio, pero se deja así por el momento para probar que funcione-->
+        <!--Esto debe ser modificado por CSS y JS y no aparecer directamente al principio, pero se deja así por el momento para probar que funcione-->
         <div class="score">
             <p>Puntuación:</p>
         </div>
@@ -72,7 +147,9 @@
         </div>
     </div>
 
-    <footer><p><b>En caso de encontrar algún bug puede reportarlo por mail a juegosbyme@direcciongenerica.com, puede acceder a su aplicación de correo en el siguiente link</b></p></footer>
+    <footer>
+      <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+      <p><b>En caso de encontrar algún bug puede reportarlo por mail a juegosbyme@direcciongenerica.com, puede acceder a su aplicación de correo en el siguiente link</b></p></footer>
     <a href="mailto:juegosbyme@direcciongenerica.com" title "Enviar reporte de bugs por correo">Reportar bug</a>
     </div>
     <!-- JavaScript -->
@@ -87,5 +164,23 @@
 <!--Código útil para referencias a futuro
 Setea una imagen, en este caso con propiedad de ancho=100 (no se puede cambiar la ruta con css, es útil para imágenes estáticas que no cambian)
 <img id="joystick" src="images/joystick.png" width=100>
+
+Código que se usaba para columnas y filas con los puntajes, puede ser útil para implementar el juego con filas y columnas
+<div class="row scoreRow justify-content-sm-center">
+    <div class="col-sm-3">Sumas: </div>
+    <div class="col-sm-2">1</div>
+</div>
+<div class="row scoreRow justify-content-sm-center">
+    <div class="col-sm-3">Restas: </div>
+    <div class="col-sm-2">1</div>
+</div>
+<div class="row scoreRow justify-content-sm-center">
+    <div class="col-sm-3">Multiplicaciones: </div>
+    <div class="col-sm-2">2</div>
+</div>
+<div class="row scoreRow justify-content-sm-center">
+    <div class="col-sm-3">Divisiones: </div>
+    <div class="col-sm-2">3</div>
+</div>
 
 -->

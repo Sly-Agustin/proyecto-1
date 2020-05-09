@@ -22,10 +22,11 @@
     background: #031321;
     color: #2196f3;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    /*letter-spacing: 4px;*/
     text-decoration: none;
     overflow: hidden;
     transition: 0.2s;
+    border-radius: 0.5rem;
 }
 .darkModeButton:hover {
     color: #255784;
@@ -38,15 +39,14 @@
     font-weight: bold;
     display: inline-block;
     padding: 15px 30px;
-    /*background: #BABABA;
-    color: #3562B6;*/
     background: #2196f3;
     color:#255784;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    /*letter-spacing: 4px;*/
     text-decoration: none;
     overflow: hidden;
     transition: 0.2s;
+    border-radius: 0.5rem;
 }
 .lightModeButton:hover {
     color: #2196f3;
@@ -72,31 +72,76 @@ body {
     color: #ffffff;
 }
 
-.row div{
+.scoreRow div{
     background: lightblue;
     padding: 5px 5px;
     border: 1px solid;
     color: #000000;    /*Para evitar que el modo nocturno lo deje feo*/
 }
 
-.bordesColumnas{
-    background: lightblue;
-    padding: 5px 5px;
-    border: 1px solid;
+.borderDM{
+    border: 1px solid #324975;
+}
+
+.bgHeader{
+    background-color: #043086;  /*Usar para modo nocturno #2B4982?*/
+    color: #ffffff;
+}
+
+.whiteColor{
+    color: #ffffff;
+}
+
+.vulturHeader{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+/*Se utiliza para hacer "override" de la clase div.card que siempre setea el background-color a #fff, esta es la única forma de hacerlo
+  sin declarar una clase card propia y eliminando la de bootstrap. No se si es lo ideal porque !important tiene que evitar usarse pero
+  no encontre otra forma de hacerlo sin modificar el bootstrap base.*/
+.transparentCard {
+    background-color: transparent !important;
 }
 
 .headerDiv{
     background-color: #FF0000;
 }
 
+.github{
+    content:url(imagesCSS/github.png);
+}
+
 .joystick{
     content:url(imagesCSS/joystick.png);
 }
-
 .joystickN{
     content:url(imagesCSS/joystickInverted.png);
 }
 
+.addImg{
+    content:url(imagesCSS/suma.png);
+}
+.addImgDM{
+    content:url(imagesCSS/sumaInverted.png);
+}
+.subImg{
+    content:url(imagesCSS/resta.png);
+}
+.subImgDM{
+    content:url(imagesCSS/restaInverted.png);
+}
+.mulImg{
+    content:url(imagesCSS/multiplicacion.png);
+}
+.mulImgDM{
+    content:url(imagesCSS/multiplicacionInverted.png);
+}
+.divImg{
+    content:url(imagesCSS/division.png);
+}
+.divImgDM{
+    content:url(imagesCSS/divisionInverted.png);
+}
 
 /* Código útil para referencias a futuro
 
