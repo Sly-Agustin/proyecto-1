@@ -1,12 +1,12 @@
 <!doctype html>
 <!--Pendiente:
-    - Reemplazar el header por una navbar con bootstrap e incluir el título, la imagen y el modo nocturno
-    - Agregar un pie de página con bootstrap donde inluir el reporte de errores
-    - Agregar el oyente al botón de respuesta
+    - Terminar el navbar con links
+    - Agregar el oyente a los botones de respuesta
     - Darle formato a la página para que no quede todo desordenado
     - Testear bien el modo nocturno una vez terminado todo lo anterior (debería funcionar bien igual pero por las dudas...)
     - Ver de agregar varios modos de respuesta (seleccionar respuesta correcta en un radio button, escribir campo, etc)
     - Importar las librarias de bootstrap locales (para descartar las online)
+    - Hacer refactor
 
 -->
 
@@ -22,26 +22,40 @@
       <title>Proyecto 1</title>
   </head>
   <body>
-    <!--<header>
-        <div id="headerId"><img id="joystick" class="joystick" width=100 no-repeat center></div>
-    </header>-->
-    <!-- Image and text -->
-    <nav class="navbar navbar-expand bgHeader">
-        <a class="navbar-brand whiteColor" href="#"><img width="60" height="60" id="joystick" class="joystick d-inline-block" alt="">Vultur Games</a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- Navbar -->
+    <nav id="header" class="navbar navbar-expand-sm bgHeader p-2">
+        <a class="navbar-brand linkColor" href="#"><img width="60" height="60" id="joystick" class="joystick d-inline-block align-center" alt="Vultur games joystick">Vultur Games</a>
+        <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
             <ul class="navbar-nav bd-navbar-nav flex-row">
-                <li class="nav-link">
-                    <a class="nav-link whiteColor" href="#">Home</a>
+                <li class="nav-item">
+                    <a class="nav-link linkColor" href="#">Home</a>
                 </li>
-                <li class="nav-link">
-                    <a class="nav-link whiteColor" href="http://www.ninjaipsum.com/" target="_blank">Link de prueba Ninja Ipsum</a>
+                <li class="nav-item">
+                    <a class="nav-link linkColor" href="http://www.ninjaipsum.com/" target="_blank">Link</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link linkColor" href="#">Juegos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkColor" href="#">¿Quiénes somos?</a>
+                </li>
+                <li>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar juegos" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </li>
             </ul>
         </div>
-        <ul class="navbar-nav ml-md-auto">
-            <li class="nav-link p-2">
-                <a class="navbar-link whiteColor" href="https://github.com/Sly-Agustin/proyecto-1" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="60" id="github" class="github"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
+        <ul class="navbar-nav ml-md-auto px-3">
+            <li class="nav-link">
+                <a class="navbar-link whiteColor" href="https://www.facebook.com/Vultur-games-630058880828234" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="facebook" class="facebookImgInverted"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
+            </li>
+            <li class="nav-link">
+                <a class="navbar-link whiteColor" href="https://twitter.com/vultur_games" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="twitter" class="twitterImgInverted"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
+            </li>
+            <li class="nav-link">
+                <a class="navbar-link whiteColor" href="https://github.com/Sly-Agustin/proyecto-1" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="github" class="githubImgInverted"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
             </li>
             <li>
                 <button id="buttonDM" class="lightModeButton" onclick=toggleDarkMode()>Modo nocturno ON/OFF</button>
@@ -49,23 +63,24 @@
         </ul>
     </nav>
 
-    <div class="container">
-    <h1>Prueba tu velocidad en cálculos matemáticos</h1>
-    <hr/>   <!--Esto se hace por CSS después, está a modo de ejemplo para no olvidarse nomas-->
-    <p>Párrafo de prueba donde se explica el objetivo del juego </p></br>
-    <h2>Cómo jugar</h2>
-    <p>Instrucciones:</p>
-    <ul>
-        <li>Instrucciones sobre como empezar a jugar y donde poner los resultados</li>
-        <li>Instrucciones sobre el tiempo</li>
-        <li>Instrucciones sobre el tipo de cálculos que pueden aparecer</li>
-        <li>Instrucción sobre como subir la dificultad (a analizar)</li>
-    </ul>
+    <!--Container de título e instrucciones-->
+    <div class="container p-3">
+        <h1>Prueba tu velocidad en cálculos matemáticos</h1>
+        <hr/>   <!--Esto se hace por CSS después, está a modo de ejemplo para no olvidarse nomas-->
+        <p>Bienvenido! El juego consiste en resolver la mayor cantidad de cálculos matemáticos en un tiempo dado.</p></br>
+        <h2>Cómo jugar</h2>
+        <p>Instrucciones:</p>
+        <ul>
+            <li>Para empezar a jugas es necesario seleccionar el modo de juego abajo y luego pulsar el botón jugar.</li>
+            <li>El tiempo siempre es de 30 segundos a menos que se seleccione el modo sin límites</li>
+            <li>Pueden aparecer diferentes cálculos aritméticos simples, los cuales se detallan más abajo</li>
+            <li>Instrucción sobre como subir la dificultad (a analizar)</li>
+        </ul>
     </div>
-    <div class="container">
-    </br>
 
     <!--Operaciones y puntajes-->
+    <div class="container">
+    </br>
     <h3>Operaciones y puntajes:</h3>
     </br>
     <div class="row">
@@ -88,7 +103,7 @@
             </div>
         </div>
         <div class="col-md-6 col-lg-3">
-            <div class="card bg-transparent">
+            <div class="card bg-transparent borderGrey">
                 <img id="mulImg" class="mulImg card-img-top img-fluid">
                 <div class="card-body">
                     <h3 class="card-title">Multiplicación</h3>
@@ -108,6 +123,7 @@
     </div>
     </div>
     </br>
+
     <!--Container con un Nav donde se describen los distintos modos de juego-->
     <div class="container">
         <h3>Modos de juego:</h3>
@@ -132,26 +148,29 @@
 
     <!--Container del modo jugar-->
     <div class="container">
-    <button>Jugar!</button>
-    <div class="wrapper">
-        <!--Esto debe ser modificado por CSS y JS y no aparecer directamente al principio, pero se deja así por el momento para probar que funcione-->
-        <div class="score">
-            <p>Puntuación:</p>
-        </div>
-        <div class="juego">
-            <form>
-                <label>Resolver:</label>
-                <input type="text" placeholder="Resultado" />
-                <input type="button" value="Enviar respuesta" />
-            </form>
+        <button>Jugar!</button>
+        <div class="wrapper">
+            <!--Esto debe ser modificado por CSS y JS y no aparecer directamente al principio, pero se deja así por el momento para probar que funcione-->
+            <div class="score">
+                <p>Puntuación:</p>
+            </div>
+            <div class="juego">
+                <form>
+                    <label>Resolver:</label>
+                    <input type="text" placeholder="Resultado" />
+                    <input type="button" value="Enviar respuesta" />
+                </form>
+            </div>
         </div>
     </div>
 
-    <footer>
-      <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
-      <p><b>En caso de encontrar algún bug puede reportarlo por mail a juegosbyme@direcciongenerica.com, puede acceder a su aplicación de correo en el siguiente link</b></p></footer>
-    <a href="mailto:juegosbyme@direcciongenerica.com" title "Enviar reporte de bugs por correo">Reportar bug</a>
-    </div>
+    <footer id="footer" class="footer">
+        <div id="footer" class="container footer py-1 linkColor italic">
+            <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+            <p>En caso de encontrar algún bug puede reportarlo por mail a vulturgames@gmail.com, puede acceder a su aplicación de correo en el siguiente link</p>
+            <a href="mailto:vulturgames@gmail.com" title "Enviar reporte de bugs por correo">Reportar bug</a>
+        </div>
+    </footer>
     <!-- JavaScript -->
     <script src="js/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

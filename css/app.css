@@ -54,6 +54,13 @@
     box-shadow: 0 0 10px #255784, 0 0 40px #255784, 0 0 80px #255784;
 }
 
+.borderRound{
+    border-radius: 0.5rem;
+}
+.borderGrey{
+    border: 1px solid #494949;
+}
+
 body {
     font-size: 15px;
     font-family: Roboto, Arial, sans-serif;
@@ -67,8 +74,22 @@ body {
     width: 400px;
 }
 
+.footer {
+    margin-top: 2rem;
+    bottom: 0;
+    width: 100%;
+    background-color: #2B4982;
+}
+
+.footerDM{
+    margin-top: 2rem;
+    bottom: 0;
+    width: 100%;
+    background-color: #001873;
+}
+
 .nocturno{
-    background-color: #494949;
+    background-color: #181818; /*#494949;*/
     color: #ffffff;
 }
 
@@ -84,12 +105,27 @@ body {
 }
 
 .bgHeader{
-    background-color: #043086;  /*Usar para modo nocturno #2B4982?*/
+    background-color: #2B4982;
+    color: #ffffff;
+}
+.bgHeaderDM{
+    background-color: #001873;
     color: #ffffff;
 }
 
 .whiteColor{
     color: #ffffff;
+}
+
+.linkColor{
+    color: #E4E4E4;
+}
+.linkColor:hover{
+    color: #ffffff;
+}
+
+.italic{
+    font-style: italic;
 }
 
 .vulturHeader{
@@ -107,15 +143,30 @@ body {
     background-color: #FF0000;
 }
 
-.github{
+.githubImg{
     content:url(imagesCSS/github.png);
+}
+.githubImgInverted{
+    content:url(imagesCSS/githubInverted.png);
+}
+
+.facebookImgInverted{
+    content:url(imagesCSS/facebookInverted.png);
+}
+
+.twitterImgInverted{
+    content:url(imagesCSS/twitterInverted.png);
 }
 
 .joystick{
     content:url(imagesCSS/joystick.png);
 }
-.joystickN{
+.joystickDM{
     content:url(imagesCSS/joystickInverted.png);
+}
+
+.search{
+    content:url(imagesCSS/search.png);
 }
 
 .addImg{
