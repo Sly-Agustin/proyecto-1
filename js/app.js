@@ -5,7 +5,8 @@ class Operacion{
       this.points=0;
     }
     randomInt(){}
-    calculate(num1, num2){}
+    /*calculate(num1, num2){}*/
+    calculate(nums) {}
     getPoints(){return this.points}
     getSigno(){return this.signo}
 }
@@ -16,11 +17,25 @@ class Suma extends Operacion{
         this.signo="+";
         this.points=1;
     }
-    randomInt() {
+    /*randomInt() {
         return randomNumber(1, 10);
+    }*/
+    randomInt(){
+        var nums=[];
+        for(var i=0; i<2; i++){
+            nums[i]=randomNumber(1, 10);
+        }
+        return nums;
     }
-    calculate(num1, num2) {
+    /*calculate(num1, num2) {
         return num1+num2;
+    }*/
+    calculate(nums) {
+        var result=0;
+        for(var i=0; i<nums.length; i++){
+            result=result+nums[i];
+        }
+        return result;
     }
 }
 class Resta extends Operacion{
@@ -29,11 +44,19 @@ class Resta extends Operacion{
         this.signo="-";
         this.points=1;
     }
-    randomInt() {
-        return randomNumber(1, 10);
+    randomInt(){
+        var nums=[];
+        for(var i=0; i<2; i++){
+            nums[i]=randomNumber(1, 10);
+        }
+        return nums;
     }
-    calculate(num1, num2) {
-        return num1-num2;
+    calculate(nums) {
+        var result=nums[0];
+        for(var i=1; i<nums.length; i++){
+            result=result-nums[i];
+        }
+        return result;
     }
 }
 class Multiplicacion extends Operacion{
@@ -42,11 +65,19 @@ class Multiplicacion extends Operacion{
         this.signo="*";
         this.points=2;
     }
-    randomInt() {
-        return randomNumber(1, 10);
+    randomInt(){
+        var nums=[];
+        for(var i=0; i<2; i++){
+            nums[i]=randomNumber(1, 10);
+        }
+        return nums;
     }
-    calculate(num1, num2) {
-        return num1*num2;
+    calculate(nums) {
+        var result=nums[0];
+        for(var i=1; i<nums.length; i++){
+            result=result*nums[i];
+        }
+        return result;
     }
 }
 class Division extends Operacion{
@@ -55,13 +86,22 @@ class Division extends Operacion{
         this.signo="/";
         this.points=3;
     }
-    randomInt() {
-        return randomNumber(1, 50);
+    randomInt(){
+        var nums=[];
+        for(var i=0; i<2; i++){
+            nums[i]=randomNumber(1, 10);
+        }
+        return nums;
     }
-    calculate(num1, num2) {
-        return Math.floor(num1/num2);
+    calculate(nums) {
+        var result=nums[0];
+        for(var i=1; i<nums.length; i++){
+            result=Math.floor(result/nums[i]);
+        }
+        return result;
     }
 }
+
 
 class Juego{
     constructor(){
@@ -73,6 +113,7 @@ class Juego{
         this.score=0;
         this.number1=0
         this.number2=0;
+        this.numbers=null;    /*EXPERIMENTAL*/
         this.op=null;
     }
 
@@ -116,14 +157,17 @@ class Juego{
     updateExpression() {
         var stringExpression="Resolver: ";
         this.op=this.randomSign();
-        this.number1=this.op.randomInt();
-        this.number2=this.op.randomInt();
+        /*this.number1=this.op.randomInt();
+        this.number2=this.op.randomInt();*/
+        this.numbers=this.op.randomInt();
         var expression = document.getElementById("expression");
         expression.innerHTML=stringExpression.concat(this.number1, this.op.getSigno(), this.number2);
+        expression.innerHTML=stringExpression.concat(this.numbers[0], this.op.getSigno(), this.numbers[1]);
     }
 
     checkResult(){
-        var result=this.op.calculate(this.number1, this.number2);
+        /*var result=this.op.calculate(this.number1, this.number2);*/
+        var result=this.op.calculate(this.numbers);
         var userResult=document.getElementById("result").value;
         if(userResult==result){
             this.updateScore();
@@ -138,10 +182,16 @@ class Juego{
         var score=document.getElementById("score");
         score.innerHTML=stringScore.concat(this.score);
     }
+
+    setDificulty(dif){
+        this.dificultad=dif;
+    }
 }
 
-juego=new Juego();
 
+
+
+/*Funciones de tiempo*/
 function CountDownTimer(duration, granularity) {
   this.duration = duration;
   this.granularity = granularity || 1000;
@@ -193,6 +243,7 @@ CountDownTimer.parse = function(seconds) {
   };
 };
 
+
 /*Funciones que modifican HTML*/
 function playGame(){
     createTimer();
@@ -209,7 +260,6 @@ function gameOver(){
 function updateTimeLeft(minutes, seconds){
     var timeLeft=document.getElementById("timeLeft");
     var str="Tiempo restante: "+seconds;
-    console.log(str);
     timeLeft.innerHTML=str;
 }
 function createTimer(){
@@ -292,6 +342,11 @@ function checkKeyPressed(event){
         juego.checkResult();
     }
 }
+
+/*Inicialización*/
+juego=new Juego();
+
+
 
 
 
