@@ -1,7 +1,5 @@
 <!doctype html>
 <!--Pendiente:
-    - Terminar el navbar con links
-    - Agregar el oyente a los botones de respuesta
     - Darle formato a la página para que no quede todo desordenado
     - Testear bien el modo nocturno una vez terminado todo lo anterior (debería funcionar bien igual pero por las dudas...)
     - Ver de agregar varios modos de respuesta (seleccionar respuesta correcta en un radio button, escribir campo, etc)
@@ -74,6 +72,8 @@
             <li>Para empezar a jugas es necesario seleccionar el modo de juego abajo y luego pulsar el botón jugar.</li>
             <li>El tiempo siempre es de 30 segundos a menos que se seleccione el modo sin límites</li>
             <li>Pueden aparecer diferentes cálculos aritméticos simples, los cuales se detallan más abajo</li>
+            <li>Si la respuesta es correcta se suman puntos, si es incorrecta no se suman puntos y se cambia de cálculo</li>
+            <li>Puede enviarse la respuesta apretando el botón "Enviar respuesta" o pulsando la tecla enter</li>
             <li>Instrucción sobre como subir la dificultad (a analizar)</li>
         </ul>
     </div>
@@ -116,7 +116,7 @@
                 <img id="divImg" class="divImg card-img-top img-fluid">
                 <div class="card-body">
                     <h3 class="card-title">División</h3>
-                    <p>Las divisiones son las operaciones más complejas del juego, otorgan 3 puntos</p>
+                    <p>Las divisiones son las operaciones más complejas del juego, son divisiones enteras (o sea de resto 0), otorgan 3 puntos</p>
                 </div>
             </div>
         </div>
@@ -148,19 +148,29 @@
 
     <!--Container del modo jugar-->
     <div class="container">
-        <button>Jugar!</button>
+        <button id="playButton" onclick="playGame()">Jugar!</button>
         <div class="wrapper">
             <!--Esto debe ser modificado por CSS y JS y no aparecer directamente al principio, pero se deja así por el momento para probar que funcione-->
+            <div class="timeLeft">
+                <p id="timeLeft">Tiempo restante:</p>
+            </div>
             <div class="score">
-                <p>Puntuación:</p>
+                <p id="score">Puntuación:</p>
             </div>
             <div class="juego">
-                <form>
-                    <label>Resolver:</label>
-                    <input type="text" placeholder="Resultado" />
-                    <input type="button" value="Enviar respuesta" />
+                <form onSubmit="return false;">   <!--Este onSubmit evita que la página se recargue cada vez que se apriete enter, esto es para poder enviar -->
+                    <label id="expression">Resolver:</label>
+                    <input id="result" type="text" onkeydown="checkKeyPressed(event)" placeholder="Resultado" />
+                    <input id="sendResult" type="button" onclick="juego.checkResult()" value="Enviar respuesta" />
                 </form>
             </div>
+        </div>
+        <div class="row scoreRow justify-content-sm-center">
+            <div class="col-sm-5">Puntuación: </div>
+        </div>
+        <div class="row scoreRow justify-content-sm-center">
+            <div class="col-sm-3">Resolver: </div>
+            <div class="col-sm-2">1</div>
         </div>
     </div>
 

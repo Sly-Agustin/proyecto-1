@@ -22,7 +22,6 @@
     background: #031321;
     color: #2196f3;
     text-transform: uppercase;
-    /*letter-spacing: 4px;*/
     text-decoration: none;
     overflow: hidden;
     transition: 0.2s;
@@ -71,7 +70,7 @@ body {
 .wrapper{
     background-color: #D78419;
     border: 2px solid #000;
-    width: 400px;
+    width: 600px;
 }
 
 .footer {
