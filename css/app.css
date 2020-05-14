@@ -25,7 +25,6 @@
     background: #2196f3;
     color:#255784;
     text-transform: uppercase;
-    /*letter-spacing: 4px;*/
     text-decoration: none;
     overflow: hidden;
     transition: 0.2s;
@@ -53,19 +52,61 @@
     letter-spacing: 3px;
     transition: 0.2s;
     border-radius: 0.5rem;
+    padding: 15px 30px;
+    margin-bottom: 30px;
 }
 .playButton:hover {
     box-shadow: 0 0 10px #255784, 0 0 40px #255784, 0 0 80px #255784;
 }
-.playButtonDM{
+.playButton:disabled{
+    text-align: center;
+    border: none;
+    display: inline-block;
+    background: #ABACAB;
+    color:#ffffff;
+    text-decoration: none;
+    overflow: hidden;
+    letter-spacing: 3px;
+    transition: 0.2s;
+    border-radius: 0.5rem;
+    padding: 15px 30px;
+}
 
+.sendResultButton{
+    text-align: center;
+    border: none;
+    display: inline-block;
+    background: #007bff;
+    color:#ffffff;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 0.5rem;
+    padding: 5px 10px;
+}
+.sendResultButton:disabled{
+    text-align: center;
+    border: none;
+    display: inline-block;
+    background: #ABACAB;
+    color:#ffffff;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 0.5rem;
+    padding: 5px 10px;
 }
 
 .borderRound{
     border-radius: 0.5rem;
+    padding: 10px 10px;
+    margin: 2rem;
 }
 .borderGrey{
     border: 1px solid #494949;
+}
+.borderLightGrey{
+    border: 1px solid rgba(0,0,0,.1);
 }
 
 body {
@@ -101,10 +142,23 @@ body {
 }
 
 .scoreRow div{
-    background: lightblue;
+    /*background: lightblue;*/
     padding: 5px 5px;
-    border: 1px solid;
-    color: #000000;    /*Para evitar que el modo nocturno lo deje feo*/
+    font-size: 24px;
+    /*border: 1px solid;*/
+    /*color: #000000;    /*Para evitar que el modo nocturno lo deje feo*/
+}
+.containerPlay{
+    background: #F4F4F4;
+}
+.containerPlayDM{
+    background: #69696C;
+}
+.scoreLabel{
+    text-align: right;
+}
+.resolveLabel{
+    text-align: center;
 }
 
 .borderDM{

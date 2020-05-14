@@ -148,8 +148,6 @@ class Juego{
     updateExpression() {
         var stringExpression="Resolver: ";
         this.op=this.randomSign();
-        /*this.number1=this.op.randomInt();
-        this.number2=this.op.randomInt();*/
         this.numbers=this.op.randomInt();
         var expression = document.getElementById("expression");
         expression.innerHTML=stringExpression.concat(this.number1, this.op.getSigno(), this.number2);
@@ -157,7 +155,6 @@ class Juego{
     }
 
     checkResult(){
-        /*var result=this.op.calculate(this.number1, this.number2);*/
         var result=this.op.calculate(this.numbers);
         var userResult=document.getElementById("result").value;
         if(userResult==result){
@@ -238,10 +235,14 @@ function playGame(){
     var playButton=document.getElementById("playButton");
     playButton.disabled=true;
     juego.updateExpression();
+    var sendResultButton=document.getElementById("sendResult");
+    sendResultButton.disabled=false;
 }
 function gameOver(){
     var playButton=document.getElementById("playButton");
     playButton.disabled=false;
+    var sendResultButton=document.getElementById("sendResult");
+    sendResultButton.disabled=true;
 }
 
 function updateTimeLeft(minutes, seconds){
@@ -250,7 +251,7 @@ function updateTimeLeft(minutes, seconds){
     timeLeft.innerHTML=str;
 }
 function createTimer(){
-    var timer= new CountDownTimer(30);
+    var timer= new CountDownTimer(5);
     timer.onTick(updateTimeLeft).onTick(expiredTimer).start();
 }
 function expiredTimer() {

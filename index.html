@@ -22,20 +22,17 @@
   <body id="body">
     <!-- Navbar -->
     <nav id="header" class="navbar navbar-expand-sm bgHeader p-2">
-        <a class="navbar-brand linkColor" href="#"><img width="60" height="60" id="joystick" class="joystick d-inline-block align-center" alt="Vultur games joystick">Vultur Games</a>
+        <a class="navbar-brand linkColor" href="index.html"><img width="60" height="60" id="joystick" class="joystick d-inline-block align-center" alt="Vultur games joystick">Vultur Games</a>
         <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
             <ul class="navbar-nav bd-navbar-nav flex-row">
                 <li class="nav-item">
-                    <a class="nav-link linkColor" href="#">Home</a>
+                    <a class="nav-link linkColor" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link linkColor" href="http://www.ninjaipsum.com/" target="_blank">Link</a>
+                    <a class="nav-link linkColor" href="javascript:alert('En construcción');">Juegos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link linkColor" href="#">Juegos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link linkColor" href="#">¿Quiénes somos?</a>
+                    <a class="nav-link linkColor" href="javascript:alert('En construcción');">¿Quiénes somos?</a>
                 </li>
                 <li>
                     <form class="form-inline">
@@ -125,7 +122,7 @@
     </br>
 
     <!--Container con un Nav donde se describen los distintos modos de juego-->
-    <div class="container">
+    <div class="container borderRound borderLightGrey" id="instructionContainer">
         <h3>Modos de juego:</h3>
         <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
             <a class="nav-link active" href="#traditional" data-toggle="tab">Modo tradicional</a>
@@ -151,8 +148,7 @@
         <div class="divButton">
             <button id="playButton" class="playButton" onclick="playGame()">Jugar!</button>
         </div>
-        <div class="wrapper">
-            <!--Esto debe ser modificado por CSS y JS y no aparecer directamente al principio, pero se deja así por el momento para probar que funcione-->
+        <!--<div class="wrapper">
             <div class="timeLeft">
                 <p id="timeLeft">Tiempo restante:</p>
             </div>
@@ -161,21 +157,33 @@
             </div>
             <div class="juego">
                 <form onSubmit="return false;">   <!--Este onSubmit evita que la página se recargue cada vez que se apriete enter, esto es para poder enviar -->
-                    <label id="expression">Resolver:</label>
+                    <!--<label id="expression">Resolver:</label>
                     <input id="result" type="text" onkeydown="checkKeyPressed(event)" placeholder="Resultado" />
-                    <input id="sendResult" type="button" onclick="juego.checkResult()" value="Enviar respuesta" />
+                    <!--<input id="sendResult" type="button" onclick="juego.checkResult()" value="Enviar respuesta" />-->
+                    <!--<button id="sendResult" class="sendResultButton" onclick="juego.checkResult()">Enviar respuesta!</button>
                 </form>
             </div>
+        <!--</div>-->
+    </div>
+    <div class="container borderRound borderLightGrey containerPlay" id="playContainer">
+        <div class="row scoreRow justify-content-sm-center">
+            <div class="col-sm-6"><p id="timeLeft">Tiempo restante:</p></div>
+            <div class="col-sm-6 scoreLabel"><p id="score">Puntuación:</p></div>
         </div>
         <div class="row scoreRow justify-content-sm-center">
-            <div class="col-sm-5">Puntuación: </div>
+            <div class="col-sm-6 resolveLabel"><label id="expression">Resolver:</label></div>
         </div>
         <div class="row scoreRow justify-content-sm-center">
-            <div class="col-sm-3">Resolver: </div>
-            <div class="col-sm-2">1</div>
+            <div class="col-sm-3"><input id="result" type="text" onkeydown="checkKeyPressed(event)" placeholder="Resultado" /></div>
+            <div class="col-sm-3"><button id="sendResult" class="sendResultButton" onclick="juego.checkResult()" disabled>Enviar respuesta!</button></div>
         </div>
     </div>
-
+    <!--Social media-->
+    <div class="container">
+        <div class="fb-share-button" data-href="https://www.facebook.com/Vultur-games-630058880828234" data-layout="box_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FVultur-games-630058880828234&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
+        <a href="https://twitter.com/vultur_games?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @vultur_games</a>
+    </div>
+    <!--Footer-->
     <footer id="footer" class="footer">
         <div id="footer" class="container footer py-1 linkColor italic">
             <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
@@ -189,6 +197,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="js/darkMode.js"></script>
     <script src="js/app.js"></script>
   </body>

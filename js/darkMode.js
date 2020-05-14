@@ -43,6 +43,18 @@ function changeFooterMode(){
         footerToggle[i].classList.toggle("footerDM");
     }
 }
+function changeInstructionMode(){
+    var instructionToggle = document.getElementById("instructionContainer");
+    instructionToggle.classList.toggle("borderGrey");
+    instructionToggle.classList.toggle("borderLightGrey");
+}
+function changePlayContainerMode(){
+    var playToggle = document.getElementById("playContainer");
+    playToggle.classList.toggle("borderGrey");
+    playToggle.classList.toggle("borderLightGrey");
+    playToggle.classList.toggle("containerPlayDM");
+    playToggle.classList.toggle("containerPlay");
+}
 
 function toggleDarkMode() {
     var element = document.body;    // Obtengo el body del documento para modificar las propiedades.
@@ -53,6 +65,8 @@ function toggleDarkMode() {
     changeImagesMode();
     changeHeaderMode();
     changeFooterMode();
+    changeInstructionMode();
+    changePlayContainerMode();
 
     if ($( "#body" ).hasClass("nocturno")){
         localStorage.setItem('darkBtnClicked', "true");
