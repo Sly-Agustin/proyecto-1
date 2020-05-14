@@ -23,6 +23,7 @@ function changeImagesMode(){
 
     /*No es clean code, habrá alguna manera mejor de hacer esto? Averiguar*/
     var sumToggle = document.getElementById("addImg");
+    sumToggle.classList.toggle("addImg");
     sumToggle.classList.toggle("addImgDM");
     var subToggle = document.getElementById("subImg");
     subToggle.classList.toggle("subImgDM");

@@ -251,7 +251,7 @@ function updateTimeLeft(minutes, seconds){
     timeLeft.innerHTML=str;
 }
 function createTimer(){
-    var timer= new CountDownTimer(5);
+    var timer= new CountDownTimer(30);
     timer.onTick(updateTimeLeft).onTick(expiredTimer).start();
 }
 function expiredTimer() {
@@ -277,24 +277,3 @@ function checkKeyPressed(event){
 
 /*Inicialización*/
 juego=new Juego();
-
-
-
-/* Funciones útiles para usar a futuro
-Esta función con jquery cambia los colores de todos los divs que no sean azules a azules.
-$( document.body ).click(function() {
-  $( "div" ).each(function( i ) {
-    if ( this.style.color !== "blue" ) {
-      this.style.color = "blue";
-    } else {
-      this.style.color = "";
-    }
-  });
-});*/
-
-/*var headerDiv = element.getElementsByClassName("headerDiv");
-headerDiv.classList.toggle("headerDiv");*/
-/*var headerDiv = document.getElementsByClassName("headerDiv")[0];*/
-/*headerDiv.style.backgroundColor="#FF0000";*/
-/*var joystickImage = element.getElementsByClassName("joystickN")[0];
-joystickImage.src="images/joystickInverted.png"*/

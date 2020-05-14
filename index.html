@@ -22,7 +22,7 @@
   <body id="body">
     <!-- Navbar -->
     <nav id="header" class="navbar navbar-expand-sm bgHeader p-2">
-        <a class="navbar-brand linkColor" href="index.html"><img width="60" height="60" id="joystick" class="joystick d-inline-block align-center" alt="Vultur games joystick">Vultur Games</a>
+        <a class="navbar-brand linkColor" href="index.html"><img width="60" height="60" id="joystick" src="css/imagesCSS/joystick.png" class="joystick d-inline-block align-center" alt="Vultur games joystick">Vultur Games</a>
         <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
             <ul class="navbar-nav bd-navbar-nav flex-row">
                 <li class="nav-item">
@@ -44,13 +44,13 @@
         </div>
         <ul class="navbar-nav ml-md-auto px-3">
             <li class="nav-link">
-                <a class="navbar-link whiteColor" href="https://www.facebook.com/Vultur-games-630058880828234" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="facebook" class="facebookImgInverted"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
+                <a class="navbar-link whiteColor" href="https://www.facebook.com/Vultur-games-630058880828234" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="facebook" src="css/imagesCSS/facebookInverted.png" class="facebookImgInverted"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
             </li>
             <li class="nav-link">
-                <a class="navbar-link whiteColor" href="https://twitter.com/vultur_games" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="twitter" class="twitterImgInverted"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
+                <a class="navbar-link whiteColor" href="https://twitter.com/vultur_games" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="twitter" src="css/imagesCSS/twitterInverted.png" class="twitterImgInverted"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
             </li>
             <li class="nav-link">
-                <a class="navbar-link whiteColor" href="https://github.com/Sly-Agustin/proyecto-1" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="github" class="githubImgInverted"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
+                <a class="navbar-link whiteColor" href="https://github.com/Sly-Agustin/proyecto-1" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="github" src="css/imagesCSS/githubInverted.png" class="githubImgInverted"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
             </li>
             <li>
                 <button id="buttonDM" class="lightModeButton" onclick=toggleDarkMode()>Modo nocturno ON/OFF</button>
@@ -83,7 +83,7 @@
     <div class="row">
         <div class="col-md-6 col-lg-3">
             <div class="card bg-transparent">
-                <img id="addImg" class="addImg card-img-top img-fluid">
+                <img id="addImg" class="addImg card-img-top img">
                 <div class="card-body">
                     <h3 class="card-title">Suma</h3>
                     <p>Las sumas son operaciones sencillas, otorgan 1 punto</p>
@@ -92,7 +92,7 @@
         </div>
         <div class="col-md-6 col-lg-3">
             <div class="card bg-transparent">
-                <img id="subImg" class="subImg card-img-top img-fluid">
+                <img id="subImg" class="subImg card-img-top img">
                 <div class="card-body">
                     <h3 class="card-title">Resta</h3>
                     <p>Las restas son operaciones sencillas, otorgan 1 punto</p>
@@ -101,7 +101,7 @@
         </div>
         <div class="col-md-6 col-lg-3">
             <div class="card bg-transparent borderGrey">
-                <img id="mulImg" class="mulImg card-img-top img-fluid">
+                <img id="mulImg" class="mulImg card-img-top img">
                 <div class="card-body">
                     <h3 class="card-title">Multiplicación</h3>
                     <p>Las multiplicaciones son operaciones sencillas, otorgan 2 puntos</p>
@@ -110,7 +110,7 @@
         </div>
         <div class="col-md-6 col-lg-3">
             <div class="card bg-transparent">
-                <img id="divImg" class="divImg card-img-top img-fluid">
+                <img id="divImg" class="divImg card-img-top img">
                 <div class="card-body">
                     <h3 class="card-title">División</h3>
                     <p>Las divisiones son las operaciones más complejas del juego, deben redondearse hacia abajo en caso de no ser enteras (Por ejemplo 5/4=1), otorgan 3 puntos</p>
@@ -135,10 +135,10 @@
                 <p>Consiste en hacer la mayor cantidad de cálculos posibles en el periodo de 30 segundos</p>
             </div>
             <div class="tab-pane" id="multipleChoice">
-                <p>Es igual al modo tradicional pero en lugar de escribir el resultado debe seleccionarse la respuesta correcta de un grupo</p>
+                <p>NO IMPLEMENTADO Es igual al modo tradicional pero en lugar de escribir el resultado debe seleccionarse la respuesta correcta de un grupo</p>
             </div>
             <div class="tab-pane" id="limitless">
-                <p>No hay límite de tiempo. Bueno para practicar y mejorar tu velocidad de cálculo sin la presión de tener un reloj</p>
+                <p>NO IMPLEMENTADO No hay límite de tiempo. Bueno para practicar y mejorar tu velocidad de cálculo sin la presión de tener un reloj</p>
             </div>
         </div>
     </div>
@@ -148,22 +148,6 @@
         <div class="divButton">
             <button id="playButton" class="playButton" onclick="playGame()">Jugar!</button>
         </div>
-        <!--<div class="wrapper">
-            <div class="timeLeft">
-                <p id="timeLeft">Tiempo restante:</p>
-            </div>
-            <div class="score">
-                <p id="score">Puntuación:</p>
-            </div>
-            <div class="juego">
-                <form onSubmit="return false;">   <!--Este onSubmit evita que la página se recargue cada vez que se apriete enter, esto es para poder enviar -->
-                    <!--<label id="expression">Resolver:</label>
-                    <input id="result" type="text" onkeydown="checkKeyPressed(event)" placeholder="Resultado" />
-                    <!--<input id="sendResult" type="button" onclick="juego.checkResult()" value="Enviar respuesta" />-->
-                    <!--<button id="sendResult" class="sendResultButton" onclick="juego.checkResult()">Enviar respuesta!</button>
-                </form>
-            </div>
-        <!--</div>-->
     </div>
     <div class="container borderRound borderLightGrey containerPlay" id="playContainer">
         <div class="row scoreRow justify-content-sm-center">
@@ -178,11 +162,13 @@
             <div class="col-sm-3"><button id="sendResult" class="sendResultButton" onclick="juego.checkResult()" disabled>Enviar respuesta!</button></div>
         </div>
     </div>
+
     <!--Social media-->
     <div class="container">
         <div class="fb-share-button" data-href="https://www.facebook.com/Vultur-games-630058880828234" data-layout="box_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FVultur-games-630058880828234&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
         <a href="https://twitter.com/vultur_games?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @vultur_games</a>
     </div>
+
     <!--Footer-->
     <footer id="footer" class="footer">
         <div id="footer" class="container footer py-1 linkColor italic">
@@ -208,23 +194,5 @@
 <!--Código útil para referencias a futuro
 Setea una imagen, en este caso con propiedad de ancho=100 (no se puede cambiar la ruta con css, es útil para imágenes estáticas que no cambian)
 <img id="joystick" src="images/joystick.png" width=100>
-
-Código que se usaba para columnas y filas con los puntajes, puede ser útil para implementar el juego con filas y columnas
-<div class="row scoreRow justify-content-sm-center">
-    <div class="col-sm-3">Sumas: </div>
-    <div class="col-sm-2">1</div>
-</div>
-<div class="row scoreRow justify-content-sm-center">
-    <div class="col-sm-3">Restas: </div>
-    <div class="col-sm-2">1</div>
-</div>
-<div class="row scoreRow justify-content-sm-center">
-    <div class="col-sm-3">Multiplicaciones: </div>
-    <div class="col-sm-2">2</div>
-</div>
-<div class="row scoreRow justify-content-sm-center">
-    <div class="col-sm-3">Divisiones: </div>
-    <div class="col-sm-2">3</div>
-</div>
 
 -->

@@ -231,28 +231,76 @@ body {
 }
 
 .addImg{
-    content:url(imagesCSS/suma.png);
+    border: none;
+    background: center no-repeat;
+    background-image:url(imagesCSS/suma.png);
+    height: 200px;
+    width: 200px;
+    background-size: contain;
+    /*content:url(imagesCSS/suma.png);*/
 }
 .addImgDM{
-    content:url(imagesCSS/sumaInverted.png);
+    border: none;
+    background: center no-repeat;
+    background-image:url(imagesCSS/sumaInverted.png);
+    height: 200px;
+    width: 200px;
+    background-size: contain;
+    /*content:url(imagesCSS/sumaInverted.png);*/
 }
 .subImg{
-    content:url(imagesCSS/resta.png);
+    border: none;
+    background: center no-repeat;
+    background-image:url(imagesCSS/resta.png);
+    height: 200px;
+    width: 200px;
+    background-size: contain;
+    /*content:url(imagesCSS/resta.png);*/
 }
 .subImgDM{
-    content:url(imagesCSS/restaInverted.png);
+    border: none;
+    background: center no-repeat;
+    background-image:url(imagesCSS/restaInverted.png);
+    height: 200px;
+    width: 200px;
+    background-size: contain;
+    /*content:url(imagesCSS/restaInverted.png);*/
 }
 .mulImg{
-    content:url(imagesCSS/multiplicacion.png);
+    border: none;
+    background: center no-repeat;
+    background-image:url(imagesCSS/multiplicacion.png);
+    height: 200px;
+    width: 200px;
+    background-size: contain;
+    /*content:url(imagesCSS/multiplicacion.png);*/
 }
 .mulImgDM{
-    content:url(imagesCSS/multiplicacionInverted.png);
+      border: none;
+      background: center no-repeat;
+      background-image:url(imagesCSS/multiplicacionInverted.png);
+      height: 200px;
+      width: 200px;
+      background-size: contain;
+    /*content:url(imagesCSS/multiplicacionInverted.png);*/
 }
 .divImg{
-    content:url(imagesCSS/division.png);
+    border: none;
+    background: center no-repeat;
+    background-image:url(imagesCSS/division.png);
+    height: 200px;
+    width: 200px;
+    background-size: contain;
+    /*content:url(imagesCSS/division.png);*/
 }
 .divImgDM{
-    content:url(imagesCSS/divisionInverted.png);
+    border: none;
+    background: center no-repeat;
+    background-image:url(imagesCSS/divisionInverted.png);
+    height: 200px;
+    width: 200px;
+    background-size: contain;
+    /*content:url(imagesCSS/divisionInverted.png);*/
 }
 
 /* Código útil para referencias a futuro
