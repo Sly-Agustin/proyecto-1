@@ -1,5 +1,8 @@
 # Proyecto 1:  HTML - CSS - Javascript - DOM
 
+## **Video de entrega**
+https://www.youtube.com/watch?v=Oc5TmxO9MPQ
+
 ## **Introducción**
 
 El proyecto consiste de un videojuego online el cuál consiste en resolver la mayor cantidad de operaciones matemáticas en el menor tiempo posible. El desarrollo del mismo conlleva la utilización de HTML, CSS y JavaScript.

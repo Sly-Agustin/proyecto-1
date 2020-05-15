@@ -27,8 +27,6 @@ function changeImagesMode(){
     sumToggle.classList.toggle("addImgDM");
     var subToggle = document.getElementById("subImg");
     subToggle.classList.toggle("subImgDM");
-    /*subToggle.classList.toggle("bg-light");   Agregar bg-light u otro para usar estas dos lineas (para probar después)
-    subToggle.classList.toggle("bg-dark");*/
     var mulToggle = document.getElementById("mulImg");
     mulToggle.classList.toggle("mulImgDM");
     var divToggle = document.getElementById("divImg");
