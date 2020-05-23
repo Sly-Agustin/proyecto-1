@@ -82,7 +82,12 @@ class Division extends Operacion{
     randomInt(){
         var nums=[];
         for(var i=0; i<2; i++){
-            nums[i]=randomNumber(1, 10);
+            nums[i]=randomNumber(2, 200);
+        }
+        while ((this.calculate(nums)==0) || (nums[0]%nums[1]!=0)){
+            for(var i=0; i<2; i++){
+                nums[i]=randomNumber(2, 200);
+            }
         }
         return nums;
     }
@@ -106,30 +111,26 @@ class Juego{
         this.score=0;
         this.numbers=null;
         this.op=null;
+        this.statePlaying=false;
     }
 
     randomSign(){    /*Hardcodeado para probar, refactorear una vez funcione*/
         var signo=randomNumber(0,4);
-        if(signo==0){
-            return this.sum;
-        }
-        else{
-            if(signo==1){
+        switch(signo) {
+            case 0:
+                return this.sum;
+                break;
+            case 1:
                 return this.res;
-            }
-            else{
-                if(signo==2){
-                    return this.mul;
-                }
-                else{
-                    if(signo==3){
-                        return this.div;
-                    }
-                    else{
-                        return "errorsigno";
-                    }
-                }
-            }
+                break;
+            case 2:
+                return this.mul;
+                break;
+            case 3:
+                return this.div;
+                break;
+            default:
+                return "errorSigno";
         }
     }
 
@@ -169,6 +170,14 @@ class Juego{
         this.score=0;
         var score=document.getElementById("score");
         score.innerHTML=stringScore.concat(this.score);
+    }
+
+    getStatePlaying() {
+        return this.statePlaying;
+    }
+
+    setStatePlaying(state) {
+        this.statePlaying=state;
     }
 }
 
@@ -228,10 +237,11 @@ CountDownTimer.parse = function(seconds) {
 };
 
 
-/*Funciones que modifican HTML*/
+/*Funciones que actualizan/modifican HTML*/
 function playGame(){
     createTimer();
     juego.resetScore();
+    juego.setStatePlaying(true);
     var playButton=document.getElementById("playButton");
     playButton.disabled=true;
     juego.updateExpression();
@@ -239,6 +249,7 @@ function playGame(){
     sendResultButton.disabled=false;
 }
 function gameOver(){
+    juego.setStatePlaying(false);
     var playButton=document.getElementById("playButton");
     playButton.disabled=false;
     var sendResultButton=document.getElementById("sendResult");
@@ -271,7 +282,9 @@ function randomNumber(min, max) {    /*Devuelve números random entre min y max-
 function checkKeyPressed(event){
     var keyPressed=event.key;
     if (keyPressed=="Enter"){
-        juego.checkResult();
+        if (juego.getStatePlaying()) {
+            juego.checkResult();
+        }
     }
 }
 
