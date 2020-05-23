@@ -55,7 +55,7 @@
     padding: 15px 30px;
     margin-bottom: 30px;
 }
-.playButton:hover {
+.playButton:hover:enabled {
     box-shadow: 0 0 10px #255784, 0 0 40px #255784, 0 0 80px #255784;
 }
 .playButton:disabled{
@@ -82,7 +82,8 @@
     overflow: hidden;
     transition: 0.2s;
     border-radius: 0.5rem;
-    padding: 5px 10px;
+    padding: 3px 10px;
+    margin-left: 50px;
 }
 .sendResultButton:disabled{
     text-align: center;
@@ -94,7 +95,7 @@
     overflow: hidden;
     transition: 0.2s;
     border-radius: 0.5rem;
-    padding: 5px 10px;
+    padding: 3px 10px;
 }
 
 .borderRound{
@@ -116,19 +117,12 @@ body {
     padding: 0;
 }
 
-.wrapper{
-    background-color: #D78419;
-    border: 2px solid #000;
-    width: 600px;
-}
-
 .footer {
     margin-top: 2rem;
     bottom: 0;
     width: 100%;
     background-color: #2B4982;
 }
-
 .footerDM{
     margin-top: 2rem;
     bottom: 0;
@@ -142,11 +136,8 @@ body {
 }
 
 .scoreRow div{
-    /*background: lightblue;*/
     padding: 5px 5px;
     font-size: 24px;
-    /*border: 1px solid;*/
-    /*color: #000000;    /*Para evitar que el modo nocturno lo deje feo*/
 }
 .containerPlay{
     background: #F4F4F4;

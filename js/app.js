@@ -151,7 +151,6 @@ class Juego{
         this.op=this.randomSign();
         this.numbers=this.op.randomInt();
         var expression = document.getElementById("expression");
-        expression.innerHTML=stringExpression.concat(this.number1, this.op.getSigno(), this.number2);
         expression.innerHTML=stringExpression.concat(this.numbers[0], this.op.getSigno(), this.numbers[1]);
     }
 

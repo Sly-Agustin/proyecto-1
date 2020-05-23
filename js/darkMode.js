@@ -1,3 +1,17 @@
+/*Clase que guarda si estamos en modo nocturno o no, se utiliza para toglear las imágenes*/
+class Oscuro {
+    constructor(enabled) {
+        this.enabled=enabled;
+    }
+
+    setEnabled(enabled){
+        this.enabled=enabled;
+    }
+    getEnabled(){
+        return this.enabled;
+    }
+}
+
 /*Funciones que modifican CSS*/
 function changeHrMode(){
     $( document.body ).each(function() {
@@ -17,20 +31,46 @@ function changeButtonsMode(){
     buttonAux.classList.toggle("darkModeButton");
     buttonAux.classList.toggle("lightModeButton");
 }
+function changeAddImg() {
+    if (modoNocturno.getEnabled()) {
+        document.getElementById("addImg").src="css/imagesCSS/sumaInverted.png";
+    }
+    else {
+        document.getElementById("addImg").src="css/imagesCSS/suma.png"
+    }
+}
+function changeSubImg() {
+    if (modoNocturno.getEnabled()) {
+        document.getElementById("subImg").src="css/imagesCSS/restaInverted.png";
+    }
+    else {
+        document.getElementById("subImg").src="css/imagesCSS/resta.png"
+    }
+}
+function changeMulImg() {
+    if (modoNocturno.getEnabled()) {
+        document.getElementById("mulImg").src="css/imagesCSS/multiplicacionInverted.png";
+    }
+    else {
+        document.getElementById("mulImg").src="css/imagesCSS/multiplicacion.png"
+    }
+}
+function changeDivImg() {
+    if (modoNocturno.getEnabled()) {
+        document.getElementById("divImg").src="css/imagesCSS/divisionInverted.png";
+    }
+    else {
+        document.getElementById("divImg").src="css/imagesCSS/division.png"
+    }
+}
 function changeImagesMode(){
     var joystickToggle = document.getElementById("joystick");
     joystickToggle.classList.toggle("joystickDM");
 
-    /*No es clean code, habrá alguna manera mejor de hacer esto? Averiguar*/
-    var sumToggle = document.getElementById("addImg");
-    sumToggle.classList.toggle("addImg");
-    sumToggle.classList.toggle("addImgDM");
-    var subToggle = document.getElementById("subImg");
-    subToggle.classList.toggle("subImgDM");
-    var mulToggle = document.getElementById("mulImg");
-    mulToggle.classList.toggle("mulImgDM");
-    var divToggle = document.getElementById("divImg");
-    divToggle.classList.toggle("divImgDM");
+    changeAddImg();
+    changeSubImg();
+    changeMulImg();
+    changeDivImg();
 }
 function changeHeaderMode(){
     var headerToggle = document.getElementById("header");
@@ -59,6 +99,13 @@ function toggleDarkMode() {
     var element = document.body;    // Obtengo el body del documento para modificar las propiedades.
     element.classList.toggle("nocturno");   // Toggle agrega o remueve la clase "nocturno" (en CSS), en este caso a cada elemento del body del documento.
 
+    if (modoNocturno.getEnabled()) {
+        modoNocturno.setEnabled(false);
+    }
+    else {
+        modoNocturno.setEnabled(true);
+    }
+
     changeHrMode();
     changeButtonsMode();
     changeImagesMode();
@@ -75,6 +122,12 @@ function toggleDarkMode() {
     }
 }
 
+modoNocturno = new Oscuro(false);
 if((localStorage.getItem('darkBtnClicked'))=="true"){
     toggleDarkMode();
 }
+
+/*Código útil a futuro
+-- Se usa para toglear clases y cambiar imágenes
+var subToggle = document.getElementById("subImg");
+subToggle.classList.toggle("subImgDM");*/
