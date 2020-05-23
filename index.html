@@ -8,17 +8,17 @@
 -->
 
 <html lang="es">
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-      <!-- CSS -->
-      <link rel="stylesheet" href="css/app.css">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-      <title>Proyecto 1</title>
-  </head>
-  <body id="body">
+        <title>Proyecto 1</title>
+    </head>
+    <body id="body">
     <!-- Navbar -->
     <nav id="header" class="navbar navbar-expand-sm bgHeader p-2">
         <a class="navbar-brand linkColor" href="index.html"><img width="60" height="60" id="joystick" src="css/imagesCSS/joystick.png" class="d-inline-block align-center" alt="Vultur games joystick">Vultur Games</a>
@@ -56,7 +56,7 @@
             </li>
         </ul>
     </nav>
-
+    <div class="container containerBg borderRound" id="mainContainer">
     <!--Container de título e instrucciones-->
     <div class="container p-3">
         <h1>Prueba tu velocidad en cálculos matemáticos</h1>
@@ -70,7 +70,6 @@
             <li>Pueden aparecer diferentes cálculos aritméticos simples, los cuales se detallan más abajo</li>
             <li>Si la respuesta es correcta se suman puntos, si es incorrecta no se suman puntos y se cambia de cálculo</li>
             <li>Puede enviarse la respuesta apretando el botón "Enviar respuesta" o pulsando la tecla enter</li>
-            <li>Instrucción sobre como subir la dificultad (a analizar)</li>
         </ul>
     </div>
 
@@ -150,14 +149,15 @@
     </div>
     <div class="container borderRound borderLightGrey containerPlay" id="playContainer">
         <div class="row scoreRow justify-content-sm-center">
-            <div class="col-sm-6"><p id="timeLeft">Tiempo restante:</p></div>
-            <div class="col-sm-6 scoreLabel"><p id="score">Puntuación:</p></div>
+            <div class="col-sm-4"><p id="timeLeft">Tiempo restante:</p></div>
+            <div class="col-sm-4 resolveLabel"><p id="answer"></p></div>
+            <div class="col-sm-4 scoreLabel"><p id="score">Puntuación:</p></div>
         </div>
         <div class="row scoreRow justify-content-sm-center">
             <div class="col-sm-6 resolveLabel"><label id="expression">Resolver:</label></div>
         </div>
         <div class="row scoreRow justify-content-sm-center">
-            <div class="col-sm-3"><input id="result" type="text" onkeydown="checkKeyPressed(event)" placeholder="Resultado" /></div>
+            <div class="col-sm-3"><input id="result" class="border-0 rounded" type="text" onkeydown="checkKeyPressed(event)" placeholder="Resultado" /></div>
             <div class="col-sm-3"><button id="sendResult" class="sendResultButton" onclick="juego.checkResult()" disabled>Enviar respuesta!</button></div>
         </div>
     </div>
@@ -167,6 +167,7 @@
         <div class="fb-share-button" data-href="https://www.facebook.com/Vultur-games-630058880828234" data-layout="box_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FVultur-games-630058880828234&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
         <a href="https://twitter.com/vultur_games?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @vultur_games</a>
     </div>
+  </div>
 
     <!--Footer-->
     <footer id="footer" class="footer">

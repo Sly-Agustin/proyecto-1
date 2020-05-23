@@ -82,7 +82,7 @@
     overflow: hidden;
     transition: 0.2s;
     border-radius: 0.5rem;
-    padding: 3px 10px;
+    padding: 0px 10px;
     margin-left: 50px;
 }
 .sendResultButton:disabled{
@@ -95,7 +95,7 @@
     overflow: hidden;
     transition: 0.2s;
     border-radius: 0.5rem;
-    padding: 3px 10px;
+    padding: 0px 10px;
 }
 
 .borderRound{
@@ -140,10 +140,16 @@ body {
     font-size: 24px;
 }
 .containerPlay{
-    background: #F4F4F4;
+    background: #DCDCDC;
 }
 .containerPlayDM{
     background: #69696C;
+}
+.containerBg {
+    background: #f7f7f9;
+}
+.containerBgDM {
+    background: #3F3F3F;
 }
 .scoreLabel{
     text-align: right;
@@ -174,6 +180,12 @@ body {
 }
 .linkColor:hover{
     color: #ffffff;
+}
+.correctAnswer{
+    color: #28a745;
+}
+.wrongAnswer{
+    color: #C22121;
 }
 
 .italic{

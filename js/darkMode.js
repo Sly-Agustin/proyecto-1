@@ -10,6 +10,54 @@ class Oscuro {
     getEnabled(){
         return this.enabled;
     }
+
+    toggleMode(){
+        if (this.getEnabled()) {
+            this.setEnabled(false);
+        }
+        else {
+            this.setEnabled(true);
+        }
+    }
+
+    changeAddImg() {
+        if (this.getEnabled()) {
+            document.getElementById("addImg").src="css/imagesCSS/sumaInverted.png";
+        }
+        else {
+            document.getElementById("addImg").src="css/imagesCSS/suma.png"
+        }
+    }
+    changeSubImg() {
+        if (this.getEnabled()) {
+            document.getElementById("subImg").src="css/imagesCSS/restaInverted.png";
+        }
+        else {
+            document.getElementById("subImg").src="css/imagesCSS/resta.png"
+        }
+    }
+    changeMulImg() {
+        if (this.getEnabled()) {
+            document.getElementById("mulImg").src="css/imagesCSS/multiplicacionInverted.png";
+        }
+        else {
+            document.getElementById("mulImg").src="css/imagesCSS/multiplicacion.png"
+        }
+    }
+    changeDivImg() {
+        if (this.getEnabled()) {
+            document.getElementById("divImg").src="css/imagesCSS/divisionInverted.png";
+        }
+        else {
+            document.getElementById("divImg").src="css/imagesCSS/division.png"
+        }
+    }
+    changeImages(){
+        this.changeAddImg();
+        this.changeSubImg();
+        this.changeMulImg();
+        this.changeDivImg();
+    }
 }
 
 /*Funciones que modifican CSS*/
@@ -31,46 +79,14 @@ function changeButtonsMode(){
     buttonAux.classList.toggle("darkModeButton");
     buttonAux.classList.toggle("lightModeButton");
 }
-function changeAddImg() {
-    if (modoNocturno.getEnabled()) {
-        document.getElementById("addImg").src="css/imagesCSS/sumaInverted.png";
-    }
-    else {
-        document.getElementById("addImg").src="css/imagesCSS/suma.png"
-    }
-}
-function changeSubImg() {
-    if (modoNocturno.getEnabled()) {
-        document.getElementById("subImg").src="css/imagesCSS/restaInverted.png";
-    }
-    else {
-        document.getElementById("subImg").src="css/imagesCSS/resta.png"
-    }
-}
-function changeMulImg() {
-    if (modoNocturno.getEnabled()) {
-        document.getElementById("mulImg").src="css/imagesCSS/multiplicacionInverted.png";
-    }
-    else {
-        document.getElementById("mulImg").src="css/imagesCSS/multiplicacion.png"
-    }
-}
-function changeDivImg() {
-    if (modoNocturno.getEnabled()) {
-        document.getElementById("divImg").src="css/imagesCSS/divisionInverted.png";
-    }
-    else {
-        document.getElementById("divImg").src="css/imagesCSS/division.png"
-    }
-}
 function changeImagesMode(){
     var joystickToggle = document.getElementById("joystick");
     joystickToggle.classList.toggle("joystickDM");
 
-    changeAddImg();
-    changeSubImg();
-    changeMulImg();
-    changeDivImg();
+    modoNocturno.changeAddImg();
+    modoNocturno.changeSubImg();
+    modoNocturno.changeMulImg();
+    modoNocturno.changeDivImg();
 }
 function changeHeaderMode(){
     var headerToggle = document.getElementById("header");
@@ -94,17 +110,16 @@ function changePlayContainerMode(){
     playToggle.classList.toggle("containerPlayDM");
     playToggle.classList.toggle("containerPlay");
 }
+function changeContainerMode() {
+    var containerToggle = document.getElementById("mainContainer");
+    containerToggle.classList.toggle("containerBgDM");
+}
 
 function toggleDarkMode() {
     var element = document.body;    // Obtengo el body del documento para modificar las propiedades.
     element.classList.toggle("nocturno");   // Toggle agrega o remueve la clase "nocturno" (en CSS), en este caso a cada elemento del body del documento.
 
-    if (modoNocturno.getEnabled()) {
-        modoNocturno.setEnabled(false);
-    }
-    else {
-        modoNocturno.setEnabled(true);
-    }
+    modoNocturno.toggleMode();
 
     changeHrMode();
     changeButtonsMode();
@@ -113,6 +128,7 @@ function toggleDarkMode() {
     changeFooterMode();
     changeInstructionMode();
     changePlayContainerMode();
+    changeContainerMode();
 
     if ($( "#body" ).hasClass("nocturno")){
         localStorage.setItem('darkBtnClicked', "true");

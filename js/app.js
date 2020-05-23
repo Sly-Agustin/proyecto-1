@@ -154,11 +154,31 @@ class Juego{
         expression.innerHTML=stringExpression.concat(this.numbers[0], this.op.getSigno(), this.numbers[1]);
     }
 
+    updateAnswerCorrect() {
+        var stringExpression="Correcto!";
+        var expression = document.getElementById("answer");
+        expression.classList.remove("wrongAnswer");
+        expression.classList.add("correctAnswer");
+        expression.innerHTML=stringExpression;
+    }
+
+    updateAnswerIncorrect() {
+        var stringExpression="Incorrecto!";
+        var expression = document.getElementById("answer");
+        expression.classList.remove("correctAnswer");
+        expression.classList.add("wrongAnswer");
+        expression.innerHTML=stringExpression;
+    }
+
     checkResult(){
         var result=this.op.calculate(this.numbers);
         var userResult=document.getElementById("result").value;
         if(userResult==result){
             this.updateScore();
+            this.updateAnswerCorrect();
+        }
+        else {
+            this.updateAnswerIncorrect();
         }
         this.updateExpression();
         this.resetTextField();
@@ -169,6 +189,12 @@ class Juego{
         this.score=0;
         var score=document.getElementById("score");
         score.innerHTML=stringScore.concat(this.score);
+    }
+
+    resetCorrectLabel() {
+      var stringExpression="";
+      var expression = document.getElementById("answer");
+      expression.innerHTML=stringExpression;
     }
 
     getStatePlaying() {
@@ -240,6 +266,7 @@ CountDownTimer.parse = function(seconds) {
 function playGame(){
     createTimer();
     juego.resetScore();
+    juego.resetCorrectLabel();
     juego.setStatePlaying(true);
     var playButton=document.getElementById("playButton");
     playButton.disabled=true;
