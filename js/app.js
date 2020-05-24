@@ -278,6 +278,7 @@ function gameOver(){
     juego.setStatePlaying(false);
     var playButton=document.getElementById("playButton");
     playButton.disabled=false;
+    document.getElementById("timeLeft").classList.remove("timeLeftLow");
     var sendResultButton=document.getElementById("sendResult");
     sendResultButton.disabled=true;
 }
@@ -285,6 +286,9 @@ function gameOver(){
 function updateTimeLeft(minutes, seconds){
     var timeLeft=document.getElementById("timeLeft");
     var str="Tiempo restante: "+seconds;
+    if(seconds<=5) {
+        timeLeft.classList.add("timeLeftLow");
+    }
     timeLeft.innerHTML=str;
 }
 function createTimer(){

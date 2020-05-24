@@ -185,7 +185,24 @@ body {
     color: #28a745;
 }
 .wrongAnswer{
-    color: #C22121;
+    color: red;
+}
+.answerBg{
+    background: #B8B3B1;
+    border-radius: 0.5rem;
+    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black, 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;
+    font-size: 35px;
+}
+.timeLeftFont{
+    font-size: 30px;
+}
+.scoreFont{
+    font-size: 30px;
+}
+
+.timeLeftLow{
+    color: red;
+    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black, 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;
 }
 
 .italic{
