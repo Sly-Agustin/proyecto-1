@@ -21,6 +21,11 @@ class Suma extends Operacion{
         for(var i=0; i<2; i++){
             nums[i]=randomNumber(1, 10);
         }
+        while ((this.calculate(nums)==0) || (nums[0]%nums[1]!=0)){
+            for(var i=0; i<2; i++){
+                nums[i]=randomNumber(1, 10);
+            }
+        }
         return nums;
     }
     calculate(nums) {
@@ -42,6 +47,11 @@ class Resta extends Operacion{
         for(var i=0; i<2; i++){
             nums[i]=randomNumber(1, 10);
         }
+        while ((this.calculate(nums)==0) || (nums[0]%nums[1]!=0)){
+            for(var i=0; i<2; i++){
+                nums[i]=randomNumber(1, 10);
+            }
+        }
         return nums;
     }
     calculate(nums) {
@@ -62,6 +72,11 @@ class Multiplicacion extends Operacion{
         var nums=[];
         for(var i=0; i<2; i++){
             nums[i]=randomNumber(1, 10);
+        }
+        while ((this.calculate(nums)==0) || (nums[0]%nums[1]!=0)){
+            for(var i=0; i<2; i++){
+                nums[i]=randomNumber(1, 10);
+            }
         }
         return nums;
     }

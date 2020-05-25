@@ -260,7 +260,6 @@ body {
     height: 200px;
     width: 200px;
     background-size: contain;
-    /*content:url(imagesCSS/suma.png);*/
 }
 .addImgDM{
     border: none;
@@ -269,7 +268,6 @@ body {
     height: 200px;
     width: 200px;
     background-size: contain;
-    /*content:url(imagesCSS/sumaInverted.png);*/
 }
 .subImg{
     border: none;
@@ -278,7 +276,6 @@ body {
     height: 200px;
     width: 200px;
     background-size: contain;
-    /*content:url(imagesCSS/resta.png);*/
 }
 .subImgDM{
     border: none;
@@ -287,7 +284,6 @@ body {
     height: 200px;
     width: 200px;
     background-size: contain;
-    /*content:url(imagesCSS/restaInverted.png);*/
 }
 .mulImg{
     border: none;
@@ -296,7 +292,6 @@ body {
     height: 200px;
     width: 200px;
     background-size: contain;
-    /*content:url(imagesCSS/multiplicacion.png);*/
 }
 .mulImgDM{
       border: none;
@@ -304,8 +299,7 @@ body {
       background-image:url(imagesCSS/multiplicacionInverted.png);
       height: 200px;
       width: 200px;
-      background-size: contain;
-    /*content:url(imagesCSS/multiplicacionInverted.png);*/
+      background-size: contain;/
 }
 .divImg{
     border: none;
@@ -314,7 +308,6 @@ body {
     height: 200px;
     width: 200px;
     background-size: contain;
-    /*content:url(imagesCSS/division.png);*/
 }
 .divImgDM{
     border: none;
@@ -323,20 +316,9 @@ body {
     height: 200px;
     width: 200px;
     background-size: contain;
-    /*content:url(imagesCSS/divisionInverted.png);*/
 }
 
 /* Código útil para referencias a futuro
 
 -- Nos permite asignar una imagen de background en una getElementsByClassName
 background: url(imagesCSS/joystickInverted.png) no-repeat center;
-
--- Para poder usar esto es necesario tener <span id="nocturno"></span>. Nos permite cambiar las propiedades de cosas con id y dentro de un span, de manera que no abarque a toda una sección completa.
-body #nocturno{
-   background-color: #000000;
-   color: #ffffff;
-}
-
--- Parámetro margin: Se agrega a una clase y nos permite establecer un margen x - y pixeles
-margin: 50px 50px;
-*/
