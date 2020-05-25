@@ -297,7 +297,7 @@ function updateTimeLeft(minutes, seconds){
     timeLeft.innerHTML=str;
 }
 function createTimer(){
-    var timer= new CountDownTimer(6);
+    var timer= new CountDownTimer(30);
     timer.onTick(updateTimeLeft).onTick(expiredTimer).start();
 }
 function expiredTimer() {
@@ -306,7 +306,6 @@ function expiredTimer() {
   }
 }
 
-/**/
 function showModalGameOver(){
     var stringGameOverModal="Felicidades! Su puntuación final es: "+juego.getScore();
     var p=document.getElementById("gameOverModalP");
