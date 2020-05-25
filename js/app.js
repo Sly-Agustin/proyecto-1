@@ -204,6 +204,10 @@ class Juego{
     setStatePlaying(state) {
         this.statePlaying=state;
     }
+
+    getScore(){
+        return this.score;
+    }
 }
 
 
@@ -281,6 +285,7 @@ function gameOver(){
     document.getElementById("timeLeft").classList.remove("timeLeftLow");
     var sendResultButton=document.getElementById("sendResult");
     sendResultButton.disabled=true;
+    showModalGameOver();
 }
 
 function updateTimeLeft(minutes, seconds){
@@ -292,7 +297,7 @@ function updateTimeLeft(minutes, seconds){
     timeLeft.innerHTML=str;
 }
 function createTimer(){
-    var timer= new CountDownTimer(30);
+    var timer= new CountDownTimer(6);
     timer.onTick(updateTimeLeft).onTick(expiredTimer).start();
 }
 function expiredTimer() {
@@ -301,7 +306,13 @@ function expiredTimer() {
   }
 }
 
-
+/**/
+function showModalGameOver(){
+    var stringGameOverModal="Felicidades! Su puntuación final es: "+juego.getScore();
+    var p=document.getElementById("gameOverModalP");
+    p.innerHTML=stringGameOverModal;
+    $('#gameOverModal').modal('show');
+}
 
 /*Funciones de cálculo*/
 function randomNumber(min, max) {    /*Devuelve números random entre min y max-1*/

@@ -56,6 +56,27 @@
             </li>
         </ul>
     </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="gameOverModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Fin del juego</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="gameOverModalP"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container containerBg borderRound" id="mainContainer">
     <!--Container de título e instrucciones-->
     <div class="container p-3">
@@ -164,7 +185,7 @@
 
     <!--Social media-->
     <div class="container">
-        <div class="fb-share-button" data-href="https://www.facebook.com/Vultur-games-630058880828234" data-layout="box_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FVultur-games-630058880828234&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
+        <div class="fb-share-button" data-href="https://sly-agustin.github.io/proyecto-1/" data-layout="box_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FVultur-games-630058880828234&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
         <a href="https://twitter.com/vultur_games?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @vultur_games</a>
     </div>
   </div>
@@ -181,9 +202,9 @@
     <!-- JavaScript, Jquery, bootstrap, etc -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0"></script>
     <script async src="https://platform.twitter.com/widgets.js" ></script>
     <script src="js/darkMode.js"></script>
