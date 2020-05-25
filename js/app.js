@@ -306,6 +306,7 @@ function expiredTimer() {
   }
 }
 
+/**/
 function showModalGameOver(){
     var stringGameOverModal="Felicidades! Su puntuación final es: "+juego.getScore();
     var p=document.getElementById("gameOverModalP");

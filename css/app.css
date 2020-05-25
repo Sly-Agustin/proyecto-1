@@ -199,6 +199,9 @@ body {
 .scoreFont{
     font-size: 30px;
 }
+.modalFont{
+    color: #000000 !important;
+}
 
 .timeLeftLow{
     color: red;
