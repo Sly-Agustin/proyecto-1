@@ -1,0 +1,255 @@
+.darkModeButton{
+    border: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 15px 30px;
+    background: #031321;
+    color: #2196f3;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 0.5rem;
+}
+.darkModeButton:hover {
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+}
+
+.lightModeButton{
+    border: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 15px 30px;
+    background: #2196f3;
+    color:#255784;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 0.5rem;
+}
+.lightModeButton:hover {
+    color: #2196f3;
+    background: #031321;
+    box-shadow: 0 0 10px #255784, 0 0 40px #255784, 0 0 80px #255784;
+}
+
+.divButton {
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+}
+.playButton{
+    text-align: center;
+    border: none;
+    display: inline-block;
+    background: #007bff;
+    color:#ffffff;
+    text-decoration: none;
+    overflow: hidden;
+    letter-spacing: 3px;
+    transition: 0.2s;
+    border-radius: 0.5rem;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+}
+.playButton:hover:enabled {
+    box-shadow: 0 0 10px #255784, 0 0 40px #255784, 0 0 80px #255784;
+}
+.playButton:disabled{
+    text-align: center;
+    border: none;
+    display: inline-block;
+    background: #ABACAB;
+    color:#ffffff;
+    text-decoration: none;
+    overflow: hidden;
+    letter-spacing: 3px;
+    transition: 0.2s;
+    border-radius: 0.5rem;
+    padding: 15px 30px;
+}
+
+.sendResultButton{
+    text-align: center;
+    border: none;
+    display: inline-block;
+    background: #007bff;
+    color:#ffffff;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 0.5rem;
+    padding: 0px 10px;
+    margin-left: 50px;
+}
+.sendResultButton:disabled{
+    text-align: center;
+    border: none;
+    display: inline-block;
+    background: #ABACAB;
+    color:#ffffff;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 0.5rem;
+    padding: 0px 10px;
+}
+
+.borderRound{
+    border-radius: 0.5rem;
+    padding: 10px 10px;
+    margin: 2rem;
+}
+.borderGrey{
+    border: 1px solid #494949;
+}
+.borderLightGrey{
+    border: 1px solid rgba(0,0,0,.1);
+}
+
+body {
+    font-size: 15px;
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    margin-top: 2rem;
+    bottom: 0;
+    width: 100%;
+    background-color: #2B4982;
+}
+.footerDM{
+    margin-top: 2rem;
+    bottom: 0;
+    width: 100%;
+    background-color: #001873;
+}
+
+.nocturno{
+    background-color: #181818; 
+    color: #ffffff;
+}
+
+.scoreRow div{
+    padding: 5px 5px;
+    font-size: 24px;
+}
+.containerPlay{
+    background: #DCDCDC;
+}
+.containerPlayDM{
+    background: #69696C;
+}
+.containerBg {
+    background: #f7f7f9;
+}
+.containerBgDM {
+    background: #3F3F3F;
+}
+.scoreLabel{
+    text-align: right;
+}
+.resolveLabel{
+    text-align: center;
+}
+
+.borderDM{
+    border: 1px solid #324975;
+}
+
+.bgHeader{
+    background-color: #2B4982;
+    color: #ffffff;
+}
+.bgHeaderDM{
+    background-color: #001873;
+    color: #ffffff;
+}
+
+.whiteColor{
+    color: #ffffff;
+}
+
+.linkColor{
+    color: #E4E4E4;
+}
+.linkColor:hover{
+    color: #ffffff;
+}
+.correctAnswer{
+    color: #28a745;
+}
+.wrongAnswer{
+    color: red;
+}
+.answerBg{
+    background: #B8B3B1;
+    border-radius: 0.5rem;
+    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black, 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;
+    font-size: 35px;
+}
+.timeLeftFont{
+    font-size: 30px;
+}
+.scoreFont{
+    font-size: 30px;
+}
+.modalFont{
+    color: #000000 !important;
+}
+
+.timeLeftLow{
+    color: red;
+    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black, 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.vulturHeader{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/*Se utiliza para hacer "override" de la clase div.card que siempre setea el background-color a #fff, esta es la única forma de hacerlo
+  sin declarar una clase card propia y eliminando la de bootstrap. No se si es lo ideal porque !important tiene que evitar usarse pero
+  no encontre otra forma de hacerlo sin modificar el bootstrap base.*/
+.transparentCard {
+    background-color: transparent !important;
+}
+
+.headerDiv{
+    background-color: #FF0000;
+}
+
+.githubImg{
+    content:url(imagesCSS/github.png);
+}
+.githubImgInverted{
+    content:url(imagesCSS/githubInverted.png);
+}
+
+.facebookImgInverted{
+    content:url(imagesCSS/facebookInverted.png);
+}
+
+.twitterImgInverted{
+    content:url(imagesCSS/twitterInverted.png);
+}
+
+.joystick{
+    content:url(imagesCSS/joystick.png);
+}
+.joystickDM{
+    content:url(imagesCSS/joystickInverted.png);
+}
+
+.search{
+    content:url(imagesCSS/search.png);
+}

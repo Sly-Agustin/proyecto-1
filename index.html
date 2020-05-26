@@ -1,18 +1,213 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/app.css">
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-    <title>Proyecto 1</title>
-  </head>
-  <body>
-    <h1>Proyecto 1</h1>
+        <title>Proyecto 1</title>
+    </head>
+    <body id="body">
+    <!-- Navbar -->
+    <nav id="header" class="navbar navbar-expand-sm bgHeader p-2">
+        <a class="navbar-brand linkColor" href="index.html"><img width="60" height="60" id="joystick" src="css/imagesCSS/joystick.png" class="d-inline-block align-center" alt="Vultur games joystick">Vultur Games</a>
+        <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
+            <ul class="navbar-nav bd-navbar-nav flex-row">
+                <li class="nav-item">
+                    <a class="nav-link linkColor" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkColor" href="javascript:alert('En construcción');">Juegos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link linkColor" href="javascript:alert('En construcción');">¿Quiénes somos?</a>
+                </li>
+                <li>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar juegos" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <ul class="navbar-nav ml-md-auto px-3">
+            <li class="nav-link">
+                <a class="navbar-link whiteColor" href="https://www.facebook.com/Vultur-games-630058880828234" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="facebook" src="css/imagesCSS/facebookInverted.png" class="facebookImgInverted" alt="faceimg"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
+            </li>
+            <li class="nav-link">
+                <a class="navbar-link whiteColor" href="https://twitter.com/vultur_games" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="twitter" src="css/imagesCSS/twitterInverted.png" class="twitterImgInverted" alt="twitimg"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
+            </li>
+            <li class="nav-link">
+                <a class="navbar-link whiteColor" href="https://github.com/Sly-Agustin/proyecto-1" target="_blank" rel="noreferrer" aria-label="GitHub"><img width="30" id="github" src="css/imagesCSS/githubInverted.png" class="githubImgInverted" alt="githubimg"></a> <!--El noreferrrer se utiliza por cuestiones de seguridad-->
+            </li>
+            <li>
+                <button id="buttonDM" class="lightModeButton" onclick=toggleDarkMode()>Modo nocturno ON/OFF</button>
+            </li>
+        </ul>
+    </nav>
 
-    <!-- JavaScript -->
+    <!-- Modal -->
+    <div class="modal fade" id="gameOverModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title modalFont" id="exampleModalLongTitle">Fin del juego</h5>
+                      <button type="button" class="close modalFont" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="gameOverModalP" class="modalFont"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container containerBg borderRound" id="mainContainer">
+    <!--Container de título e instrucciones-->
+    <div class="container p-3">
+        <h1>Prueba tu velocidad en cálculos matemáticos</h1>
+        <hr/>
+        <p>Bienvenido! El juego consiste en resolver la mayor cantidad de cálculos matemáticos en un tiempo dado.</p><br>
+        <h2>Cómo jugar</h2>
+        <p>Instrucciones:</p>
+        <ul>
+            <li>Para empezar a jugas es necesario seleccionar el modo de juego abajo y luego pulsar el botón jugar.</li>
+            <li>El tiempo siempre es de 30 segundos a menos que se seleccione el modo sin límites</li>
+            <li>Pueden aparecer diferentes cálculos aritméticos simples, los cuales se detallan más abajo</li>
+            <li>Si la respuesta es correcta se suman puntos, si es incorrecta no se suman puntos y se cambia de cálculo</li>
+            <li>Puede enviarse la respuesta apretando el botón "Enviar respuesta" o pulsando la tecla enter</li>
+        </ul>
+    </div>
+
+    <!--Operaciones y puntajes-->
+    <div class="container">
+    <br>
+    <h3>Operaciones y puntajes:</h3>
+    <br>
+    <div class="row">
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-transparent">
+                <img id="addImg" class="card-img-top img" src="css/imagesCSS/suma.png" alt="">
+                <div class="card-body">
+                    <h3 class="card-title">Suma</h3>
+                    <p>Las sumas son operaciones sencillas, otorgan 1 punto</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-transparent">
+                <img id="subImg" class="card-img-top img" src="css/imagesCSS/resta.png" alt="">
+                <div class="card-body">
+                    <h3 class="card-title">Resta</h3>
+                    <p>Las restas son operaciones sencillas, otorgan 1 punto</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-transparent borderGrey">
+                <img id="mulImg" class="card-img-top img" src="css/imagesCSS/multiplicacion.png" alt="">
+                <div class="card-body">
+                    <h3 class="card-title">Multiplicación</h3>
+                    <p>Las multiplicaciones son operaciones sencillas, otorgan 2 puntos</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card bg-transparent">
+                <img id="divImg" class="card-img-top img" src="css/imagesCSS/division.png" alt="">
+                <div class="card-body">
+                    <h3 class="card-title">División</h3>
+                    <p>Las divisiones son las operaciones más complejas del juego, son divisiones enteras, otorgan 3 puntos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+
+    <!--Container con un Nav donde se describen los distintos modos de juego-->
+    <div class="container borderRound borderLightGrey" id="instructionContainer">
+        <h3>Modos de juego:</h3>
+        <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
+            <a class="nav-link active" href="#traditional" data-toggle="tab">Modo tradicional</a>
+            <a class="nav-link" href="#multipleChoice" data-toggle="tab">Multiple-choice</a>
+            <a class="nav-link" href="#limitless" data-toggle="tab">Sin límites</a>
+        </nav>
+
+        <div class="tab-content py-5">
+            <div class="tab-pane active" id="traditional">
+                <p>Consiste en hacer la mayor cantidad de cálculos posibles en el periodo de 30 segundos</p>
+            </div>
+            <div class="tab-pane" id="multipleChoice">
+                <p>NO IMPLEMENTADO Es igual al modo tradicional pero en lugar de escribir el resultado debe seleccionarse la respuesta correcta de un grupo</p>
+            </div>
+            <div class="tab-pane" id="limitless">
+                <p>NO IMPLEMENTADO No hay límite de tiempo. Bueno para practicar y mejorar tu velocidad de cálculo sin la presión de tener un reloj</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Container del modo jugar-->
+    <div class="container">
+        <div class="divButton">
+            <button id="playButton" class="playButton" onclick="playGame()">Jugar!</button>
+        </div>
+    </div>
+    <div class="container borderRound borderLightGrey containerPlay" id="playContainer">
+        <div class="row scoreRow justify-content-sm-center">
+            <div class="col-sm-4"><p id="timeLeft" class="timeLeftFont">Tiempo restante:</p></div>
+            <div class="col-sm-4 resolveLabel"><p id="answer" class="answerBg"></p></div>
+            <div class="col-sm-4 scoreLabel"><p id="score" class="scoreFont">Puntuación:</p></div>
+        </div>
+        <div class="row scoreRow justify-content-sm-left">
+            <div class="col-sm-3 resolveLabel">
+                <div class="progress">
+                    <div id="progressBarTimeLeft" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="30"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row scoreRow justify-content-sm-center">
+            <div class="col-sm-6 resolveLabel"><label id="expression">Resolver:</label></div>
+        </div>
+        <div class="row scoreRow justify-content-sm-center">
+            <div class="col-sm-3"><input id="result" class="border-0 rounded" type="text" onkeydown="checkKeyPressed(event)" placeholder="Resultado" /></div>
+            <div class="col-sm-3"><button id="sendResult" class="sendResultButton" onclick="juego.checkResult()" disabled>Enviar respuesta!</button></div>
+        </div>
+    </div>
+
+    <!--Social media-->
+    <div class="container">
+        <div class="fb-share-button" data-href="https://sly-agustin.github.io/proyecto-1/" data-layout="box_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FVultur-games-630058880828234&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
+        <a href="https://twitter.com/vultur_games?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @vultur_games</a>
+    </div>
+  </div>
+
+    <!--Footer-->
+    <footer id="footer" class="footer">
+        <div class="container footer py-1 linkColor italic">
+            <div>Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+            <p>En caso de encontrar algún bug puede reportarlo por mail a vulturgames@gmail.com, puede acceder a su aplicación de correo en el siguiente link</p>
+            <a href="mailto:vulturgames@gmail.com">Reportar bug</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript, Jquery, bootstrap, etc -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0"></script>
+    <script async src="https://platform.twitter.com/widgets.js" ></script>
+    <script src="js/darkMode.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
