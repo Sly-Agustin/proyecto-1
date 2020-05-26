@@ -297,9 +297,10 @@ function gameOver(){
     juego.setStatePlaying(false);
     var playButton=document.getElementById("playButton");
     playButton.disabled=false;
-    document.getElementById("timeLeft").classList.remove("timeLeftLow");
     var sendResultButton=document.getElementById("sendResult");
     sendResultButton.disabled=true;
+    document.getElementById("timeLeft").classList.remove("timeLeftLow");
+    document.getElementById("progressBarTimeLeft").classList.remove("bg-danger");
     showModalGameOver();
 }
 
@@ -311,9 +312,19 @@ function updateTimeLeft(minutes, seconds){
     }
     timeLeft.innerHTML=str;
 }
+function updateBar(minutes, seconds){
+    var timeLeft=document.getElementById("progressBarTimeLeft");
+    $(document).ready(function() {
+            $("#progressBarTimeLeft").css("width", seconds/30*100+"%");
+            $("#progressBarTimeLeft").attr("aria-valuenow", seconds);
+        });
+    if(seconds<=5) {
+        timeLeft.classList.add("bg-danger");
+    }
+}
 function createTimer(){
     var timer= new CountDownTimer(30);
-    timer.onTick(updateTimeLeft).onTick(expiredTimer).start();
+    timer.onTick(updateTimeLeft).onTick(updateBar).onTick(expiredTimer).start();
 }
 function expiredTimer() {
   if(this.expired()) {
