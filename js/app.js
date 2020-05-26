@@ -18,12 +18,14 @@ class Suma extends Operacion{
     }
     randomInt(){
         var nums=[];
+        var minNumRandom=2;
+        var maxNumRandom=15;
         for(var i=0; i<2; i++){
-            nums[i]=randomNumber(1, 10);
+            nums[i]=randomNumber(minNumRandom, maxNumRandom);
         }
-        while ((this.calculate(nums)==0) || (nums[0]%nums[1]!=0)){
+        while ((this.calculate(nums)==0)){
             for(var i=0; i<2; i++){
-                nums[i]=randomNumber(1, 10);
+                nums[i]=randomNumber(minNumRandom, maxNumRandom);
             }
         }
         return nums;
@@ -44,12 +46,14 @@ class Resta extends Operacion{
     }
     randomInt(){
         var nums=[];
+        var minNumRandom=2;
+        var maxNumRandom=15;
         for(var i=0; i<2; i++){
-            nums[i]=randomNumber(1, 10);
+            nums[i]=randomNumber(minNumRandom, maxNumRandom);
         }
-        while ((this.calculate(nums)==0) || (nums[0]%nums[1]!=0)){
+        while ((this.calculate(nums)==0)){
             for(var i=0; i<2; i++){
-                nums[i]=randomNumber(1, 10);
+                nums[i]=randomNumber(minNumRandom, maxNumRandom);
             }
         }
         return nums;
@@ -70,12 +74,14 @@ class Multiplicacion extends Operacion{
     }
     randomInt(){
         var nums=[];
+        var minNumRandom=2;
+        var maxNumRandom=15;
         for(var i=0; i<2; i++){
-            nums[i]=randomNumber(1, 10);
+            nums[i]=randomNumber(minNumRandom, maxNumRandom);
         }
-        while ((this.calculate(nums)==0) || (nums[0]%nums[1]!=0)){
+        while ((this.calculate(nums)==0)){
             for(var i=0; i<2; i++){
-                nums[i]=randomNumber(1, 10);
+                nums[i]=randomNumber(minNumRandom, maxNumRandom);
             }
         }
         return nums;
@@ -96,12 +102,15 @@ class Division extends Operacion{
     }
     randomInt(){
         var nums=[];
+        var minNumRandom=2;
+        var maxNumRandom=200;
         for(var i=0; i<2; i++){
-            nums[i]=randomNumber(2, 200);
+            nums[i]=randomNumber(minNumRandom, maxNumRandom);
         }
+        /*Recalcular valor en caso de que no sea una división entera o la divisón de 0*/
         while ((this.calculate(nums)==0) || (nums[0]%nums[1]!=0)){
             for(var i=0; i<2; i++){
-                nums[i]=randomNumber(2, 200);
+                nums[i]=randomNumber(minNumRandom, maxNumRandom);
             }
         }
         return nums;
@@ -119,7 +128,6 @@ class Division extends Operacion{
 class Juego{
     constructor(){
         this.div=new Division();
-        this.div=new Division();
         this.sum=new Suma();
         this.mul=new Multiplicacion();
         this.res=new Resta();
@@ -129,7 +137,7 @@ class Juego{
         this.statePlaying=false;
     }
 
-    randomSign(){    /*Hardcodeado para probar, refactorear una vez funcione*/
+    randomSign(){
         var signo=randomNumber(0,4);
         switch(signo) {
             case 0:
@@ -287,20 +295,15 @@ function playGame(){
     juego.resetScore();
     juego.resetCorrectLabel();
     juego.setStatePlaying(true);
-    var playButton=document.getElementById("playButton");
-    playButton.disabled=true;
+    disablePlayButton();
     juego.updateExpression();
-    var sendResultButton=document.getElementById("sendResult");
-    sendResultButton.disabled=false;
+    enableSendResultButton();
+    resetClasses();
 }
 function gameOver(){
     juego.setStatePlaying(false);
-    var playButton=document.getElementById("playButton");
-    playButton.disabled=false;
-    var sendResultButton=document.getElementById("sendResult");
-    sendResultButton.disabled=true;
-    document.getElementById("timeLeft").classList.remove("timeLeftLow");
-    document.getElementById("progressBarTimeLeft").classList.remove("bg-danger");
+    enablePlayButton();
+    disableSendResultButton();
     showModalGameOver();
 }
 
@@ -332,12 +335,33 @@ function expiredTimer() {
   }
 }
 
-/**/
+/*Funciones de inicio de juego*/
+function disablePlayButton(){
+    var playButton=document.getElementById("playButton");
+    playButton.disabled=true;
+}
+function enableSendResultButton(){
+    var sendResultButton=document.getElementById("sendResult");
+    sendResultButton.disabled=false;
+}
+/*Funciones de fin de juego*/
 function showModalGameOver(){
     var stringGameOverModal="Felicidades! Su puntuación final es: "+juego.getScore();
     var p=document.getElementById("gameOverModalP");
     p.innerHTML=stringGameOverModal;
     $('#gameOverModal').modal('show');
+}
+function enablePlayButton() {
+    var playButton=document.getElementById("playButton");
+    playButton.disabled=false;
+}
+function disableSendResultButton(){
+    var sendResultButton=document.getElementById("sendResult");
+    sendResultButton.disabled=true;
+}
+function resetClasses(){
+    document.getElementById("timeLeft").classList.remove("timeLeftLow");
+    document.getElementById("progressBarTimeLeft").classList.remove("bg-danger");
 }
 
 /*Funciones de cálculo*/

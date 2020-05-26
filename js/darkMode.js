@@ -115,6 +115,14 @@ function changeContainerMode() {
     containerToggle.classList.toggle("containerBgDM");
 }
 
+function readModeLocalStorage(){
+    if ($( "#body" ).hasClass("nocturno")){
+        localStorage.setItem('darkBtnClicked', "true");
+    }
+    else {
+        localStorage.setItem('darkBtnClicked', "false");
+    }
+}
 function toggleDarkMode() {
     var element = document.body;    // Obtengo el body del documento para modificar las propiedades.
     element.classList.toggle("nocturno");   // Toggle agrega o remueve la clase "nocturno" (en CSS), en este caso a cada elemento del body del documento.
@@ -130,20 +138,10 @@ function toggleDarkMode() {
     changePlayContainerMode();
     changeContainerMode();
 
-    if ($( "#body" ).hasClass("nocturno")){
-        localStorage.setItem('darkBtnClicked', "true");
-    }
-    else {
-        localStorage.setItem('darkBtnClicked', "false");
-    }
+    readModeLocalStorage();
 }
 
 modoNocturno = new Oscuro(false);
 if((localStorage.getItem('darkBtnClicked'))=="true"){
     toggleDarkMode();
 }
-
-/*Código útil a futuro
--- Se usa para toglear clases y cambiar imágenes
-var subToggle = document.getElementById("subImg");
-subToggle.classList.toggle("subImgDM");*/

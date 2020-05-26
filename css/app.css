@@ -131,7 +131,7 @@ body {
 }
 
 .nocturno{
-    background-color: #181818; /*#494949;*/
+    background-color: #181818; 
     color: #ffffff;
 }
 
@@ -216,6 +216,7 @@ body {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
 /*Se utiliza para hacer "override" de la clase div.card que siempre setea el background-color a #fff, esta es la única forma de hacerlo
   sin declarar una clase card propia y eliminando la de bootstrap. No se si es lo ideal porque !important tiene que evitar usarse pero
   no encontre otra forma de hacerlo sin modificar el bootstrap base.*/
@@ -252,8 +253,3 @@ body {
 .search{
     content:url(imagesCSS/search.png);
 }
-
-/* Código útil para referencias a futuro
-
--- Nos permite asignar una imagen de background en una getElementsByClassName
-background: url(imagesCSS/joystickInverted.png) no-repeat center;
